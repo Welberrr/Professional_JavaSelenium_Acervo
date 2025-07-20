@@ -17,7 +17,7 @@ public class CamposTesteLivro {
 	private WebDriver driver;
 	private WebDriverWait wait;
 	
-	WebElement botaoMenuLivro, botaoLivros, campoTitulo, campoIniciais, campoAssunto, campoISBN, campoAno, campoEdicao, campoVolume, campoCodigoColecao, campoEditora, campoClassificacaoGeral ;
+	WebElement botaoMenuLivro, botaoLivros, campoTitulo, campoIniciais, campoAssunto, campoISBN, campoAno, campoEdicao, campoVolume, campoCodigoColecao, campoEditora, campoClassificacaoGeral, botaoGravar, botaoMenuFinal, botaoInicioFinal, campoConsultaLivro, botaoEditLivro, botaoVincularAutor, campoAutorVinculo, botaoAutor, botaoGravarVinculo ;
 	
 	public CamposTesteLivro(WebDriver driver) {
         this.driver = driver;
@@ -43,7 +43,44 @@ public class CamposTesteLivro {
 		campoClassificacaoGeral = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[2]/div/ng-component/div/div/form/div/div[4]/div[2]/p-autocomplete/div/input"));
 	}
 	
+	public void localizarBotaoGravar() {
+		botaoGravar = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[2]/div/ng-component/div/div/form/div/div[5]/span[1]/button"));
+	}
+	
+	public void localizarBotaoMenuFinal() {
+		botaoMenuFinal = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]"));
+	}
+	
+	public void localizarBotaoInicioFinal() {
+		botaoInicioFinal = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[1]/app-sidebar/app-menu/ul/li[1]/ul/li/a"));
+	}
+	
 	public WebElement botaoEspera(String xpath) {
 		return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+	}
+	
+	
+	public void localizarCampoConsulta() {
+		campoConsultaLivro = driver.findElement(By.xpath("//*[@id=\"titulo\"]"));
+	}
+	
+	public void localizarBotaoEdit() {
+		botaoEditLivro = driver.findElement(By.xpath("//*[@id=\"pn_id_41-table\"]/tbody/tr/td[9]/div[1]"));
+	}
+	
+	public void localizarBotaoVincularAutor() {
+		botaoVincularAutor = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[2]/div/ng-component/div/div/form/div[2]/div/p-toolbar/div/div[2]/button"));
+	}
+	
+	public void localizarCampoAutorVinculo() {
+		campoAutorVinculo = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[2]/div/ng-component/div/div/form/p-dialog/div/div/div[3]/div/div/p-autocomplete/div/input"));
+	}
+	
+	public void localizarBotaoAutor() {
+		botaoAutor = driver.findElement(By.xpath("//*[@id=\"pn_id_74_content\"]/div/div/div[1]/input"));
+	}
+	
+	public void localizarBotaoGravarVinculo() {
+		botaoGravarVinculo = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[2]/div/ng-component/div/div/form/p-dialog/div/div/div[4]/p-button[1]/button"));
 	}
 }

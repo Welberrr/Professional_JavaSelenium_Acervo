@@ -24,5 +24,6 @@ public class TestesMain {
        //editora.excluirEditora();
        
        livro.CadastrarLivro();
+       livro.VincularLivro();
 	}
 }
