@@ -116,8 +116,8 @@ public class TesteLivro {
 		elemento.getBotaoAutor().click();
 		Thread.sleep(1000);
 
-		elemento.localizarBotaoGravar();
-		elemento.getBotaoGravar().click();
+		elemento.localizarBotaoGravarVinculo();
+		elemento.getBotaoGravarVinculo().click();
 		Thread.sleep(1000);
 		
 		elemento.localizarBotaoMenuFinal();
