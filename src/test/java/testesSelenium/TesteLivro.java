@@ -106,10 +106,11 @@ public class TesteLivro {
 		elemento.localizarBotaoVincularAutor();
 		elemento.getBotaoVincularAutor().click();
 		
-		
 		elemento.localizarCampoAutorVinculo();
 		elemento.getCampoAutorVinculo().sendKeys(autor.getNome());
+		
 		Thread.sleep(1000);
+		
 		elemento.getCampoAutorVinculo().sendKeys(Keys.ENTER);
 		
 		elemento.localizarBotaoAutor();
@@ -119,6 +120,7 @@ public class TesteLivro {
 		elemento.localizarBotaoGravarVinculo();
 		elemento.getBotaoGravarVinculo().click();
 		Thread.sleep(1000);
+		
 		
 		elemento.localizarBotaoMenuFinal();
 	    elemento.getBotaoMenuFinal().click();
@@ -133,7 +135,40 @@ public class TesteLivro {
 		
 	}
 	
-	public void ExcluirLivro() {
+	public void ExcluirLivro()throws InterruptedException {
+		elemento.botaoMenuLivro = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
+		elemento.getBotaoMenuLivro().click();
 		
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoLivros();
+		elemento.getBotaoLivros().click();
+		
+		Thread.sleep(1000);
+		
+		
+		elemento.localizarCampoConsulta();
+		elemento.getCampoConsultaLivro().sendKeys(livro.getTitulo(), Keys.ENTER);
+		
+		Thread.sleep(4000);
+		
+		
+		
+		elemento.localizarBotaoExclusao();
+		elemento.botaoExclusao.click();
+		
+		Thread.sleep(4000);
+		
+		elemento.localizarBotaoConfirmarExlusao();
+		elemento.getBotaoConfirmarExclusao().click();
+		
+		
+		elemento.localizarBotaoMenuFinal();
+	    elemento.getBotaoMenuFinal().click();
+	    
+	    Thread.sleep(1000);
+	    
+	    elemento.localizarBotaoInicioFinal();
+	    elemento.getBotaoInicioFinal().click();
 	}
 }
