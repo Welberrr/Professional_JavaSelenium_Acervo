@@ -131,8 +131,44 @@ public class TesteLivro {
 	    elemento.getBotaoInicioFinal().click();
 	}
 	
-	public void EditarLivro() {
+	public void EditarLivro()throws InterruptedException {
+		elemento.botaoMenuLivro = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
+		elemento.getBotaoMenuLivro().click();
 		
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoLivros();
+		elemento.getBotaoLivros().click();
+		
+		Thread.sleep(1000);
+		
+		
+		elemento.localizarCampoConsulta();
+		elemento.getCampoConsultaLivro().sendKeys(livro.getTitulo(), Keys.ENTER);
+		
+		Thread.sleep(5000);
+		
+		elemento.localizarBotaoEdit();
+		elemento.getBotaoEditLivro().click();
+		
+		livro.setTitulo("");
+		livro.setSiglaAutores("");
+		livro.setAssunto("");
+		livro.setIsbn("");
+		livro.setAnoEdicao(null);
+		livro.getNumeroEdicao();
+		livro.setVolume("");
+		livro.setCodigoGrupoLivro(null);
+		
+		
+		
+		elemento.localizarBotaoMenuFinal();
+	    elemento.getBotaoMenuFinal().click();
+	    
+	    Thread.sleep(1000);
+	    
+	    elemento.localizarBotaoInicioFinal();
+	    elemento.getBotaoInicioFinal().click();
 	}
 	
 	public void ExcluirLivro()throws InterruptedException {

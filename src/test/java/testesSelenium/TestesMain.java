@@ -25,6 +25,7 @@ public class TestesMain {
        
        livro.CadastrarLivro();
        livro.VincularLivro();
+       livro.EditarLivro();
        livro.ExcluirLivro();
 	}
 }
