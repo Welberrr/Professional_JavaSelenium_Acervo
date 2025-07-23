@@ -48,7 +48,7 @@ public class CamposTesteEditora {
 	}
 	
 	public void localizarBotaoEdit() {
-		botaoEdit = driver.findElement(By.xpath("//*[@id=\"pn_id_283-table\"]/tbody/tr/td[3]/div[1]"));
+		botaoEdit = driver.findElement(By.xpath("//*[@id=\"pn_id_230-table\"]/tbody/tr/td[3]/div[1]"));
 	}
 	
 	public void localizarBotaoExclusao() {

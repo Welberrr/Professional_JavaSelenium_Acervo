@@ -17,7 +17,7 @@ public class CamposTesteLivro {
 	private WebDriver driver;
 	private WebDriverWait wait;
 	
-	WebElement botaoMenuLivro, botaoLivros, campoTitulo, campoIniciais, campoAssunto, campoISBN, campoAno, campoEdicao, campoVolume, campoCodigoColecao, campoEditora, campoClassificacaoGeral, botaoGravar, botaoMenuFinal, botaoInicioFinal, campoConsultaLivro, botaoEditLivro, botaoVincularAutor, campoAutorVinculo, botaoAutor, botaoGravarVinculo, botaoExclusao, botaoConfirmarExclusao;
+	WebElement botaoMenuLivro, botaoLivros, campoTitulo, campoIniciais, campoAssunto, campoISBN, campoAno, campoEdicao, campoVolume, campoCodigoColecao, campoEditora, campoClassificacaoGeral, botaoGravar, botaoMenuFinal, botaoInicioFinal, campoConsultaLivro, botaoEditLivro, botaoVincularAutor, campoAutorVinculo, botaoAutor, botaoGravarVinculo, botaoExclusao, botaoConfirmarExclusao, botaoAlterarEdit, botaoEdit2;
 	
 	public CamposTesteLivro(WebDriver driver) {
         this.driver = driver;
@@ -65,7 +65,7 @@ public class CamposTesteLivro {
 	}
 	
 	public void localizarBotaoEdit() {
-		botaoEditLivro = driver.findElement(By.xpath("//*[@id=\"pn_id_41-table\"]/tbody/tr/td[9]/div[1]"));
+		botaoEditLivro = driver.findElement(By.xpath("//*[@id=\"pn_id_318-table\"]/tbody/tr/td[9]/div[1]"));
 	}
 	
 	public void localizarBotaoVincularAutor() {
@@ -77,7 +77,7 @@ public class CamposTesteLivro {
 	}
 	
 	public void localizarBotaoAutor() {
-		botaoAutor = driver.findElement(By.xpath("//*[@id=\"pn_id_74_content\"]/div/div/div[1]/input"));
+		botaoAutor = driver.findElement(By.xpath("//*[@id=\"pn_id_351_content\"]/div/div/div[1]/input"));
 	}
 	
 	public void localizarBotaoGravarVinculo() {
@@ -85,10 +85,18 @@ public class CamposTesteLivro {
 	}
 	
 	public void localizarBotaoExclusao() {
-		botaoExclusao = driver.findElement(By.xpath("//*[@id=\"pn_id_87-table\"]/tbody/tr/td[9]/div[2]"));
+		botaoExclusao = driver.findElement(By.xpath("//*[@id=\"pn_id_409-table\"]/tbody/tr/td[9]/div[2]"));
 	}
 	
 	public void localizarBotaoConfirmarExlusao() {
 		botaoConfirmarExclusao = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[2]/div/ng-component/p-confirmdialog/div/div/div[3]/button[2]"));
+	}
+	
+	public void localizarBotaoEdit2() {
+		botaoEdit2 = driver.findElement(By.xpath("//table[contains(@id,'-table')]//tr[1]/td[9]/div[1]"));
+	}
+	
+	public void localizarBotaoAlterarEdit() {
+		botaoAlterarEdit = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[2]/div/ng-component/div/div/form/div[1]/div[5]/span[1]/button"));
 	}
 }

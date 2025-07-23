@@ -15,17 +15,21 @@ public class TestesMain {
         driver.get("http://localhost:4200/");
         
         
-       //autor.cadastroAutor();
-       //autor.editarAutor();
-       //autor.exclusaoAutor();
+       autor.cadastroAutor();
+       autor.editarAutor();
+       
         
-       //editora.cadastrarEditora();
-       //editora.editarEditora();
-       //editora.excluirEditora();
+       editora.cadastrarEditora();
+       editora.editarEditora();
+       
        
        livro.CadastrarLivro();
        livro.VincularLivro();
        livro.EditarLivro();
+       
+       
        livro.ExcluirLivro();
+       editora.excluirEditora();
+       autor.exclusaoAutor();
 	}
 }

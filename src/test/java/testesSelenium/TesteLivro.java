@@ -29,8 +29,8 @@ public class TesteLivro {
 		);
 	
 	
-	EditoraDto editora = (new EditoraDto("EDITORA TESTE"));
-	AutorDto autor = (new AutorDto("C.S Lewis", "CLSW"));
+	EditoraDto editora = (new EditoraDto("EDITORA EDITADA"));
+	AutorDto autor = (new AutorDto("EDITADO LEWIS", "EDITCLSW"));
 	
 	public TesteLivro(WebDriver driver) {
 		this.elemento = new CamposTesteLivro(driver);
@@ -148,20 +148,51 @@ public class TesteLivro {
 		
 		Thread.sleep(5000);
 		
-		elemento.localizarBotaoEdit();
-		elemento.getBotaoEditLivro().click();
+		elemento.localizarBotaoEdit2();
+		elemento.getBotaoEdit2().click();
 		
-		livro.setTitulo("");
-		livro.setSiglaAutores("");
-		livro.setAssunto("");
-		livro.setIsbn("");
-		livro.setAnoEdicao(null);
-		livro.getNumeroEdicao();
-		livro.setVolume("");
-		livro.setCodigoGrupoLivro(null);
+		Thread.sleep(1000);
 		
+		livro.setTitulo("As Crônicas de Nárnia: O Leão, a Feiticeira e o Guarda-Roupa EDITADO");
+		livro.setSiglaAutores("A.C.N EDIT");
+		livro.setAssunto("Fantasia");
+		livro.setIsbn("9788578270698");
+		livro.setAnoEdicao(2010L);
+		livro.setVolume("J");
+		livro.setCodigoGrupoLivro(1002L);
 		
-		
+		elemento.localizarCamposCadastroLivro();
+		elemento.getCampoTitulo().clear();
+		elemento.getCampoTitulo().sendKeys(livro.getTitulo());
+		elemento.getCampoIniciais().clear();
+	    elemento.getCampoIniciais().sendKeys(livro.getSiglaAutores());
+	    elemento.getCampoAssunto().clear();
+	    elemento.getCampoAssunto().sendKeys(livro.getAssunto());
+	    elemento.getCampoISBN().clear();
+	    elemento.getCampoISBN().sendKeys(livro.getIsbn());
+	    elemento.getCampoAno().clear();
+	    elemento.getCampoAno().sendKeys(String.valueOf(livro.getAnoEdicao()));
+	    elemento.getCampoEdicao().clear();
+	    elemento.getCampoEdicao().sendKeys(livro.getNumeroEdicao());
+	    elemento.getCampoVolume().clear();
+	    elemento.getCampoVolume().sendKeys(livro.getNumeroEdicao());
+	    elemento.getCampoCodigoColecao().clear();
+	    elemento.getCampoCodigoColecao().sendKeys(String.valueOf(livro.getCodigoGrupoLivro()));
+	    Thread.sleep(1000);
+	    elemento.getCampoEditora().clear();
+	    elemento.getCampoEditora().sendKeys(editora.getNome(), Keys.ENTER);
+	    //Thread.sleep(1000);
+	    //elemento.getCampoClassificacaoGeral().clear();
+	    //elemento.getCampoClassificacaoGeral().sendKeys("TESTES", Keys.ENTER);
+	    
+	    Thread.sleep(1000);
+	    
+	    elemento.localizarBotaoAlterarEdit();
+	    elemento.getBotaoAlterarEdit().click();
+	    
+	    Thread.sleep(1000);
+	    
+	    
 		elemento.localizarBotaoMenuFinal();
 	    elemento.getBotaoMenuFinal().click();
 	    
