@@ -57,7 +57,7 @@ public class TesteAutor{
 	    elemento.getBotaoInicio().click();
 	}
 	
-	public void editarAutor() throws InterruptedException{
+	public AutorDto editarAutor() throws InterruptedException{
 		elemento.botaoMenu = elemento.botaoEspera("//html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
         elemento.getBotaoMenu().click();   
 		
@@ -110,6 +110,8 @@ public class TesteAutor{
 	    
 	    elemento.localizarBotaoInicio();
 	    elemento.getBotaoInicio().click();
+	    
+	    return autor;
 	}
 	
 	public void exclusaoAutor()throws InterruptedException{

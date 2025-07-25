@@ -29,16 +29,13 @@ public class TesteLivro {
 		);
 	
 	
-	EditoraDto editora = (new EditoraDto("EDITORA EDITADA"));
-	AutorDto autor = (new AutorDto("EDITADO LEWIS", "EDITCLSW"));
-	
 	public TesteLivro(WebDriver driver) {
 		this.elemento = new CamposTesteLivro(driver);
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(60));
     }
 	
 	
-	public void CadastrarLivro()throws InterruptedException {
+	public void CadastrarLivro(EditoraDto editoraDto, AutorDto autorDto)throws InterruptedException {
 		elemento.botaoMenuLivro = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenuLivro().click();
 		
@@ -63,7 +60,7 @@ public class TesteLivro {
 	    elemento.getCampoEdicao().sendKeys(livro.getNumeroEdicao());
 	    elemento.getCampoVolume().sendKeys(livro.getNumeroEdicao());
 	    elemento.getCampoCodigoColecao().sendKeys(String.valueOf(livro.getCodigoGrupoLivro()));
-	    elemento.getCampoEditora().sendKeys(editora.getNome());
+	    elemento.getCampoEditora().sendKeys(editoraDto.getNome());
 	    elemento.getCampoClassificacaoGeral().sendKeys("TESTES", Keys.ENTER);
 	    
 	    
@@ -82,7 +79,7 @@ public class TesteLivro {
 	    elemento.getBotaoInicioFinal().click();
 	}
 	
-	public void VincularLivro()throws InterruptedException {
+	public void VincularLivro(AutorDto autorDto)throws InterruptedException {
 		elemento.botaoMenuLivro = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenuLivro().click();
 		
@@ -107,7 +104,7 @@ public class TesteLivro {
 		elemento.getBotaoVincularAutor().click();
 		
 		elemento.localizarCampoAutorVinculo();
-		elemento.getCampoAutorVinculo().sendKeys(autor.getNome());
+		elemento.getCampoAutorVinculo().sendKeys(autorDto.getNome());
 		
 		Thread.sleep(1000);
 		
@@ -131,7 +128,7 @@ public class TesteLivro {
 	    elemento.getBotaoInicioFinal().click();
 	}
 	
-	public void EditarLivro()throws InterruptedException {
+	public void EditarLivro(EditoraDto editoraDto)throws InterruptedException {
 		elemento.botaoMenuLivro = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenuLivro().click();
 		
@@ -180,7 +177,7 @@ public class TesteLivro {
 	    elemento.getCampoCodigoColecao().sendKeys(String.valueOf(livro.getCodigoGrupoLivro()));
 	    Thread.sleep(1000);
 	    elemento.getCampoEditora().clear();
-	    elemento.getCampoEditora().sendKeys(editora.getNome(), Keys.ENTER);
+	    elemento.getCampoEditora().sendKeys(editoraDto.getNome(), Keys.ENTER);
 	    //Thread.sleep(1000);
 	    //elemento.getCampoClassificacaoGeral().clear();
 	    //elemento.getCampoClassificacaoGeral().sendKeys("TESTES", Keys.ENTER);

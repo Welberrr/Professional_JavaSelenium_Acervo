@@ -44,7 +44,7 @@ public class TesteEditora {
 	    elemento.getBotaoInicio().click();
 	}
 	
-	public void editarEditora() throws InterruptedException {
+	public EditoraDto editarEditora() throws InterruptedException {
 		elemento.botaoMenuEditora = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
         elemento.getBotaoMenuEditora().click();
         
@@ -77,6 +77,8 @@ public class TesteEditora {
 	     
 	    elemento.localizarBotaoInicio();
 	    elemento.getBotaoInicio().click();
+	    
+	    return editora;
 	}
 	
 	public void excluirEditora() throws InterruptedException{

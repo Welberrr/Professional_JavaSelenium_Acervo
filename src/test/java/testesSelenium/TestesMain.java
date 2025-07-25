@@ -4,6 +4,9 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import br.jus.stf.acervo.model.dto.AutorDto;
+import br.jus.stf.acervo.model.dto.EditoraDto;
+
 public class TestesMain {
 
 	@Test
@@ -16,16 +19,16 @@ public class TestesMain {
         
         
        autor.cadastroAutor();
-       autor.editarAutor();
+       AutorDto autorDto = autor.editarAutor();
        
         
        editora.cadastrarEditora();
-       editora.editarEditora();
+       EditoraDto editoraDto = editora.editarEditora();
        
        
-       livro.CadastrarLivro();
-       livro.VincularLivro();
-       livro.EditarLivro();
+       livro.CadastrarLivro(editoraDto, autorDto);
+       livro.VincularLivro(autorDto);
+       livro.EditarLivro(editoraDto);
        
        
        livro.ExcluirLivro();
