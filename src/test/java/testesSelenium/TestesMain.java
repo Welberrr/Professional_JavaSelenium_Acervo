@@ -15,24 +15,27 @@ public class TestesMain {
         TesteAutor autor = new TesteAutor(driver);
         TesteEditora editora = new TesteEditora(driver);
         TesteLivro livro = new TesteLivro(driver);
+        TesteClassificacaoGeral classificacao = new TesteClassificacaoGeral(driver);
         driver.get("http://localhost:4200/");
         
         
-       autor.cadastroAutor();
-       AutorDto autorDto = autor.editarAutor();
+       //autor.cadastroAutor();
+       //AutorDto autorDto = autor.editarAutor();
        
         
-       editora.cadastrarEditora();
-       EditoraDto editoraDto = editora.editarEditora();
+       //editora.cadastrarEditora();
+       //EditoraDto editoraDto = editora.editarEditora();
+       
+       classificacao.cadastroClassificacao();
        
        
-       livro.CadastrarLivro(editoraDto, autorDto);
-       livro.VincularLivro(autorDto);
-       livro.EditarLivro(editoraDto);
+       //livro.CadastrarLivro(editoraDto, autorDto);
+       //livro.VincularLivro(autorDto);
+       //livro.EditarLivro(editoraDto);
        
        
-       livro.ExcluirLivro();
-       editora.excluirEditora();
-       autor.exclusaoAutor();
+       //livro.ExcluirLivro();
+       //editora.excluirEditora();
+       //autor.exclusaoAutor();
 	}
 }

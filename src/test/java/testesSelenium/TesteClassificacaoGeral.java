@@ -1,16 +1,55 @@
 package testesSelenium;
 
-public class TesteClassificacaoGeral {
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class CamposTesteClassificacaoGeral {
+	private WebDriver driver;
+	private WebDriverWait wait;
 	
-	public void cadastroClassificacao() {
-		
+	WebElement botaoMenu, botaoClassificacaoGeral, botaoNovaClassificacao, campoDescricao, botaoGravar, botaoMenuFinal, botaoInicio;
+	
+	
+	public CamposTesteClassificacaoGeral(WebDriver driver) {
+        this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+    }
+	
+	public void localizarBotaoClassificacaoGeral() {
+		botaoClassificacaoGeral = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[1]/app-sidebar/app-menu/ul/li[2]/ul/li[3]/a/span[1]"));
 	}
 	
-	public void editClassificacao() {
-		
+	public void localizarBotaoNovaClassificacao() {
+		botaoNovaClassificacao = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[2]/div/ng-component/div/div/div/p-toolbar/div/div[2]/button[2]"));
 	}
 	
-	public void exclusaoClassificacao() {
-		
+	public void localizarCampoDescricao() {
+		campoDescricao = driver.findElement(By.xpath("//*[@id=\"descricao\"]"));
+	}
+	
+	public void localizarBotaoGravar() {
+		botaoGravar = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[2]/div/ng-component/div/div/form/div/div[2]/span[1]/button"));
+	}
+	
+	public void localizarBotaoMenuFinal() {
+		botaoMenuFinal = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]"));
+	}
+	
+	public void localizarBotaoInicio() {
+		botaoInicio = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[1]/app-sidebar/app-menu/ul/li[1]/ul/li/a"));
+	}
+	
+	public WebElement botaoEspera(String xpath) {
+		return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
 	}
 }
