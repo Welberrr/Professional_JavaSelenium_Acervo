@@ -17,7 +17,7 @@ public class CamposTesteClassificacaoGeral {
 	private WebDriver driver;
 	private WebDriverWait wait;
 	
-	WebElement botaoMenu, botaoClassificacaoGeral, botaoNovaClassificacao, campoDescricao, botaoGravar, botaoMenuFinal, botaoInicio;
+	WebElement botaoMenu, botaoClassificacaoGeral, botaoNovaClassificacao, campoDescricao, botaoGravar, botaoMenuFinal, botaoInicio, campoConsulta, botaoPesquisar;
 	
 	
 	public CamposTesteClassificacaoGeral(WebDriver driver) {
@@ -51,5 +51,13 @@ public class CamposTesteClassificacaoGeral {
 	
 	public WebElement botaoEspera(String xpath) {
 		return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+	}
+	
+	public void localizarCampoConsulta() {
+		campoConsulta = driver.findElement(By.xpath("//*[@id=\"classificacao\"]"));
+	}
+	
+	public void localizarBotaoPesquisar() {
+		botaoPesquisar = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[2]/div/ng-component/div/div/div/form/p-toolbar/div/div[2]/button[1]"));
 	}
 }

@@ -67,6 +67,10 @@ public class TesteClassificacaoGeral {
 		Thread.sleep(1000);
 		
 		
+		elemento.localizarCampoConsulta();
+		elemento.getCampoConsulta().sendKeys(classificacao.getDescricao());
+		
+		
 		
 		
 		
