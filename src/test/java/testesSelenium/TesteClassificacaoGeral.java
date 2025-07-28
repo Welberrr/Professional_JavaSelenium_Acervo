@@ -2,54 +2,84 @@ package testesSelenium;
 
 import java.time.Duration;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import lombok.Getter;
-import lombok.Setter;
+import br.jus.stf.acervo.model.dto.ClassificacaoLivroDto;
 
-@Getter
-@Setter
-public class CamposTesteClassificacaoGeral {
-	private WebDriver driver;
+public class TesteClassificacaoGeral {
+	
+	private CamposTesteClassificacaoGeral elemento;
 	private WebDriverWait wait;
 	
-	WebElement botaoMenu, botaoClassificacaoGeral, botaoNovaClassificacao, campoDescricao, botaoGravar, botaoMenuFinal, botaoInicio;
 	
-	
-	public CamposTesteClassificacaoGeral(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+	public TesteClassificacaoGeral(WebDriver driver) {
+		this.elemento = new CamposTesteClassificacaoGeral(driver);
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(60));
     }
-	
-	public void localizarBotaoClassificacaoGeral() {
-		botaoClassificacaoGeral = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[1]/app-sidebar/app-menu/ul/li[2]/ul/li[3]/a/span[1]"));
+
+	ClassificacaoLivroDto classificacao = new ClassificacaoLivroDto ("Teste");
+
+	public void cadastroClassificacao() throws InterruptedException {
+		elemento.botaoMenu = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
+		elemento.getBotaoMenu().click();
+		
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoClassificacaoGeral();
+		elemento.getBotaoClassificacaoGeral().click();
+		
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoNovaClassificacao();
+		elemento.getBotaoNovaClassificacao().click();
+		
+		Thread.sleep(1000);
+		
+		elemento.localizarCampoDescricao();
+		elemento.getCampoDescricao().sendKeys(classificacao.getDescricao());
+		
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoGravar();
+		elemento.getBotaoGravar().click();
+		
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoMenuFinal();
+		elemento.getBotaoMenuFinal().click();
+		
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoInicio();
+		elemento.getBotaoInicio().click();
 	}
 	
-	public void localizarBotaoNovaClassificacao() {
-		botaoNovaClassificacao = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[2]/div/ng-component/div/div/div/p-toolbar/div/div[2]/button[2]"));
+	public void editClassificacao() throws InterruptedException {
+		elemento.botaoMenu = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
+		elemento.getBotaoMenu().click();
+		
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoClassificacaoGeral();
+		elemento.getBotaoClassificacaoGeral().click();
+		
+		Thread.sleep(1000);
+		
+		
+		
+		
+		
+		elemento.localizarBotaoMenuFinal();
+		elemento.getBotaoMenuFinal().click();
+		
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoInicio();
+		elemento.getBotaoInicio().click();
 	}
 	
-	public void localizarCampoDescricao() {
-		campoDescricao = driver.findElement(By.xpath("//*[@id=\"descricao\"]"));
-	}
-	
-	public void localizarBotaoGravar() {
-		botaoGravar = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[2]/div/ng-component/div/div/form/div/div[2]/span[1]/button"));
-	}
-	
-	public void localizarBotaoMenuFinal() {
-		botaoMenuFinal = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]"));
-	}
-	
-	public void localizarBotaoInicio() {
-		botaoInicio = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[1]/app-sidebar/app-menu/ul/li[1]/ul/li/a"));
-	}
-	
-	public WebElement botaoEspera(String xpath) {
-		return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+	public void exclusaoClassificacao() {
+		
 	}
 }
