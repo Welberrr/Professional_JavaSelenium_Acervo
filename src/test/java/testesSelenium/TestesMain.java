@@ -27,6 +27,7 @@ public class TestesMain {
        //EditoraDto editoraDto = editora.editarEditora();
        
        classificacao.cadastroClassificacao();
+       classificacao.editarClassificacao();
        
        
        //livro.CadastrarLivro(editoraDto, autorDto);

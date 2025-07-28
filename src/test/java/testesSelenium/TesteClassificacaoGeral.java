@@ -18,7 +18,7 @@ public class TesteClassificacaoGeral {
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(60));
     }
 
-	ClassificacaoLivroDto classificacao = new ClassificacaoLivroDto ("Teste");
+	ClassificacaoLivroDto classificacao = new ClassificacaoLivroDto ("Teste Selenium");
 
 	public void cadastroClassificacao() throws InterruptedException {
 		elemento.botaoMenu = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
@@ -55,7 +55,7 @@ public class TesteClassificacaoGeral {
 		elemento.getBotaoInicio().click();
 	}
 	
-	public void editClassificacao() throws InterruptedException {
+	public void editarClassificacao() throws InterruptedException {
 		elemento.botaoMenu = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenu().click();
 		
@@ -70,8 +70,28 @@ public class TesteClassificacaoGeral {
 		elemento.localizarCampoConsulta();
 		elemento.getCampoConsulta().sendKeys(classificacao.getDescricao());
 		
+		elemento.localizarBotaoPesquisar();
+		elemento.getBotaoPesquisar().click();
+		
+		Thread.sleep(1000);
 		
 		
+		elemento.localizarBotaoEdit();
+		elemento.getBotaoEdit().click();
+		
+		
+		classificacao.setDescricao("Teste Selenium Edit");
+		
+		elemento.localizarCampoDescEdit();
+		elemento.getCampoDescEdit().clear();
+		elemento.getCampoDescEdit().sendKeys(classificacao.getDescricao());
+		
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoAlterar();
+		elemento.getBotaoAlterar().click();
+		
+		Thread.sleep(1000);
 		
 		
 		elemento.localizarBotaoMenuFinal();
