@@ -62,7 +62,7 @@ public class CamposTesteClassificacaoGeral {
 	}
 	
 	public void localizarBotaoEdit() {
-		botaoEdit = driver.findElement(By.xpath("//*[@id=\"pn_id_59-table\"]/tbody/tr/td[4]/div[1]"));
+		botaoEdit = driver.findElement(By.xpath("//*[@id=\"pn_id_35-table\"]/tbody/tr/td[4]/div[1]"));
 	}
 	
 	public void localizarCampoDescEdit() {

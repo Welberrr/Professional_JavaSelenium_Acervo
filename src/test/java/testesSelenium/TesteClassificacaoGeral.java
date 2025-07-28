@@ -75,15 +75,19 @@ public class TesteClassificacaoGeral {
 		
 		Thread.sleep(1000);
 		
+		classificacao.setDescricao("Teste Selenium Edit");
 		
 		elemento.localizarBotaoEdit();
 		elemento.getBotaoEdit().click();
+
+		Thread.sleep(1000);
 		
-		
-		classificacao.setDescricao("Teste Selenium Edit");
 		
 		elemento.localizarCampoDescEdit();
 		elemento.getCampoDescEdit().clear();
+		
+		Thread.sleep(1000);
+		
 		elemento.getCampoDescEdit().sendKeys(classificacao.getDescricao());
 		
 		Thread.sleep(1000);
