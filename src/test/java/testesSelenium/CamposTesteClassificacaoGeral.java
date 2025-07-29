@@ -74,6 +74,6 @@ public class CamposTesteClassificacaoGeral {
 	}
 	
 	public void localizarBotaoExclusao() {
-		botaoExclusao = driver.findElement(By.xpath("//*[@id=\"pn_id_35-table\"]/tbody/tr/td[4]/div[2]"));
+		botaoExclusao = driver.findElement(By.xpath("//*[@id=\"pn_id_88-table\"]/tbody/tr/td[4]/div[2]"));
 	}
 }
