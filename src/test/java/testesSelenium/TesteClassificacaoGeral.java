@@ -107,7 +107,35 @@ public class TesteClassificacaoGeral {
 		elemento.getBotaoInicio().click();
 	}
 	
-	public void exclusaoClassificacao() {
+	public void exclusaoClassificacao() throws InterruptedException {
+		elemento.botaoMenu = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
+		elemento.getBotaoMenu().click();
 		
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoClassificacaoGeral();
+		elemento.getBotaoClassificacaoGeral().click();
+		
+		Thread.sleep(1000);
+		
+		
+		elemento.localizarCampoConsulta();
+		elemento.getCampoConsulta().sendKeys(classificacao.getDescricao());
+		
+		elemento.localizarBotaoPesquisar();
+		elemento.getBotaoPesquisar().click();
+		
+		Thread.sleep(1000);
+		
+		
+		
+		
+		elemento.localizarBotaoMenuFinal();
+		elemento.getBotaoMenuFinal().click();
+		
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoInicio();
+		elemento.getBotaoInicio().click();
 	}
 }
