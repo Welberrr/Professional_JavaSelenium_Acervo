@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import br.jus.stf.acervo.model.dto.AutorDto;
 import br.jus.stf.acervo.model.dto.EditoraDto;
+import br.jus.stf.acervo.model.dto.ClassificacaoLivroDto;
 
 public class TestesMain {
 
@@ -19,23 +20,23 @@ public class TestesMain {
         driver.get("http://localhost:4200/");
         
         
-       //autor.cadastroAutor();
-       //AutorDto autorDto = autor.editarAutor();
+       autor.cadastroAutor();
+       AutorDto autorDto = autor.editarAutor();
        
         
-       //editora.cadastrarEditora();
-       //EditoraDto editoraDto = editora.editarEditora();
+       editora.cadastrarEditora();
+       EditoraDto editoraDto = editora.editarEditora();
        
        classificacao.cadastroClassificacao();
-       classificacao.editarClassificacao();
+       ClassificacaoLivroDto classificacaoDto = classificacao.editarClassificacao();
        
-       //livro.CadastrarLivro(editoraDto, autorDto);
-       //livro.VincularLivro(autorDto);
-       //livro.EditarLivro(editoraDto);
+       livro.CadastrarLivro(editoraDto, autorDto, classificacaoDto);
+       livro.VincularLivro(autorDto);
+       livro.EditarLivro(editoraDto);
        
-       //livro.ExcluirLivro();
-       //editora.excluirEditora();
-       //autor.exclusaoAutor();
+       livro.ExcluirLivro();
+       editora.excluirEditora();
+       autor.exclusaoAutor();
        classificacao.exclusaoClassificacao();
 	}
 }

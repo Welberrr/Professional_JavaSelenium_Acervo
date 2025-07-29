@@ -55,7 +55,7 @@ public class TesteClassificacaoGeral {
 		elemento.getBotaoInicio().click();
 	}
 	
-	public void editarClassificacao() throws InterruptedException {
+	public ClassificacaoLivroDto editarClassificacao() throws InterruptedException {
 		elemento.botaoMenu = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenu().click();
 		
@@ -105,6 +105,8 @@ public class TesteClassificacaoGeral {
 		
 		elemento.localizarBotaoInicio();
 		elemento.getBotaoInicio().click();
+		
+		return classificacao;
 	}
 	
 	public void exclusaoClassificacao() throws InterruptedException {

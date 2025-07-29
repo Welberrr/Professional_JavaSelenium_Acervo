@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import br.jus.stf.acervo.model.dto.AutorDto;
+import br.jus.stf.acervo.model.dto.ClassificacaoLivroDto;
 import br.jus.stf.acervo.model.dto.EditoraDto;
 import br.jus.stf.acervo.model.dto.LivroDto;
 
@@ -35,7 +36,7 @@ public class TesteLivro {
     }
 	
 	
-	public void CadastrarLivro(EditoraDto editoraDto, AutorDto autorDto)throws InterruptedException {
+	public void CadastrarLivro(EditoraDto editoraDto, AutorDto autorDto, ClassificacaoLivroDto classificacaoDto)throws InterruptedException {
 		elemento.botaoMenuLivro = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenuLivro().click();
 		
@@ -61,7 +62,7 @@ public class TesteLivro {
 	    elemento.getCampoVolume().sendKeys(livro.getNumeroEdicao());
 	    elemento.getCampoCodigoColecao().sendKeys(String.valueOf(livro.getCodigoGrupoLivro()));
 	    elemento.getCampoEditora().sendKeys(editoraDto.getNome());
-	    elemento.getCampoClassificacaoGeral().sendKeys("TESTES", Keys.ENTER);
+	    elemento.getCampoClassificacaoGeral().sendKeys(classificacaoDto.getDescricao(), Keys.ENTER);
 	    
 	    
 	    elemento.localizarBotaoGravar();
