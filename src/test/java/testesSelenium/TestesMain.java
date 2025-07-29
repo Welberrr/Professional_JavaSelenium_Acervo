@@ -29,14 +29,13 @@ public class TestesMain {
        classificacao.cadastroClassificacao();
        classificacao.editarClassificacao();
        
-       
        //livro.CadastrarLivro(editoraDto, autorDto);
        //livro.VincularLivro(autorDto);
        //livro.EditarLivro(editoraDto);
        
-       
        //livro.ExcluirLivro();
        //editora.excluirEditora();
        //autor.exclusaoAutor();
+       classificacao.exclusaoClassificacao();
 	}
 }

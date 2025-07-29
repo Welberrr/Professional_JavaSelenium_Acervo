@@ -128,6 +128,10 @@ public class TesteClassificacaoGeral {
 		Thread.sleep(1000);
 		
 		
+		elemento.localizarBotaoExclusao();
+		elemento.getBotaoExclusao().click();
+		
+		Thread.sleep(1000);
 		
 		
 		elemento.localizarBotaoMenuFinal();
