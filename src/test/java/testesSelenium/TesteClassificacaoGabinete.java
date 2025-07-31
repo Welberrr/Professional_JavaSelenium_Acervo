@@ -5,6 +5,8 @@ import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import br.jus.stf.acervo.model.dto.ClassificacaoSetorDto;
+
 public class TesteClassificacaoGabinete {
 	
 	CamposTesteClassificacaoGabinete elemento;
@@ -16,6 +18,8 @@ public class TesteClassificacaoGabinete {
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(60));
     }
 	
+	ClassificacaoSetorDto classificacaoGab = new ClassificacaoSetorDto("Setor Teste");
+	
 	
 	public void cadastrarClassificacaoGabinete() throws InterruptedException {
 		elemento.botaoMenu = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
@@ -24,7 +28,7 @@ public class TesteClassificacaoGabinete {
 		
 		
 		elemento.localizarBotaoClassGabinete();
-		elemento.getBotaoClassGabinete();
+		elemento.getBotaoClassGabinete().click();
 		Thread.sleep(1000);
 		
 		elemento.localizarEngren();
@@ -44,7 +48,7 @@ public class TesteClassificacaoGabinete {
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoDescricao();
-		elemento.getCampoDescricao().sendKeys("?");
+		elemento.getCampoDescricao().sendKeys(classificacaoGab.getDescricao());
 		Thread.sleep(1000);
 		
 		elemento.localizarBotaoGravar();

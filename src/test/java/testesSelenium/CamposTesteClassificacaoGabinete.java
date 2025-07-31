@@ -35,7 +35,7 @@ public class CamposTesteClassificacaoGabinete {
 	}
 	
 	public void localizarBotaoClassGabinete() {
-		botaoClassGabinete = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[1]/app-sidebar/app-menu/ul/li[2]/ul/li[2]/a/span[1]"));
+		botaoClassGabinete = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[1]/app-sidebar/app-menu/ul/li[2]/ul/li[2]/a"));
 	}
 	
 	public void localizarEngren() {
