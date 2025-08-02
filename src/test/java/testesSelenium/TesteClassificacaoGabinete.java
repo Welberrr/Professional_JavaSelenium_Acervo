@@ -2,6 +2,7 @@ package testesSelenium;
 
 import java.time.Duration;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -26,10 +27,10 @@ public class TesteClassificacaoGabinete {
 		elemento.getBotaoMenu().click();
 		Thread.sleep(1000);
 		
-		
 		elemento.localizarBotaoClassGabinete();
 		elemento.getBotaoClassGabinete().click();
 		Thread.sleep(1000);
+		
 		
 		elemento.localizarEngren();
 		elemento.getBotaoEngren().click();
@@ -70,9 +71,14 @@ public class TesteClassificacaoGabinete {
 		elemento.getBotaoMenu().click();
 		Thread.sleep(1000);
 		
+		elemento.localizarBotaoClassGabinete();
+		elemento.getBotaoClassGabinete().click();
+		Thread.sleep(1000);
+		
 		
 		elemento.localizarCampoConsultaEdit();
 		elemento.getCampoConsultaEdit().sendKeys(classificacaoGab.getDescricao());
+		elemento.getCampoConsultaEdit().sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		
 		elemento.localizarBotaoEdit();
@@ -87,7 +93,7 @@ public class TesteClassificacaoGabinete {
 		Thread.sleep(1000);
 		
 		elemento.localizarBotaoAlterarEdit();
-		elemento.getBotaoAlterarEdit();
+		elemento.getBotaoAlterarEdit().click();
 		Thread.sleep(1000);
 		
 		
@@ -103,6 +109,10 @@ public class TesteClassificacaoGabinete {
 	public void excluirClassificacaoGabinite() throws InterruptedException {
 		elemento.botaoMenu = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenu().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoClassGabinete();
+		elemento.getBotaoClassGabinete().click();
 		Thread.sleep(1000);
 		
 		
