@@ -71,6 +71,24 @@ public class TesteClassificacaoGabinete {
 		Thread.sleep(1000);
 		
 		
+		elemento.localizarCampoConsultaEdit();
+		elemento.getCampoConsultaEdit().sendKeys(classificacaoGab.getDescricao());
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoEdit();
+		elemento.getBotaoEdit().click();
+		Thread.sleep(1000);
+		
+		classificacaoGab.setDescricao("Classificacao Teste Edit");
+		
+		elemento.localizarCampoEdicao();
+		elemento.getCampoEdicao().clear();
+		elemento.getCampoEdicao().sendKeys(classificacaoGab.getDescricao());
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoAlterarEdit();
+		elemento.getBotaoAlterarEdit();
+		Thread.sleep(1000);
 		
 		
 		elemento.localizarBotaoMenuFinal();
@@ -86,7 +104,8 @@ public class TesteClassificacaoGabinete {
 		elemento.botaoMenu = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenu().click();
 		Thread.sleep(1000);
-	
+		
+		
 		
 		
 		

@@ -30,6 +30,7 @@ public class TestesMain {
        //ClassificacaoLivroDto classificacaoDto = classificacao.editarClassificacao();
         
         classificacaoGabinete.cadastrarClassificacaoGabinete();
+        classificacaoGabinete.editarClassificacaoGabinete();
        
        //livro.CadastrarLivro(editoraDto, autorDto, classificacaoDto);
        //livro.VincularLivro(autorDto);
