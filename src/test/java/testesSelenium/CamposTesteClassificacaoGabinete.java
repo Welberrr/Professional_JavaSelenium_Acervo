@@ -17,7 +17,7 @@ public class CamposTesteClassificacaoGabinete {
 	private WebDriver driver;
 	private WebDriverWait wait;
 	
-	WebElement botaoMenu, botaoClassGabinete, botaoEngren, botaoGabinete, botaoAlterarGab, botaoNovaClass, campoDescricao, botaoGravar, botaoMenuFinal, botaoInicio, campoConsultaEdit, botaoEdit, campoEdicao, botaoAlterarEdit;
+	WebElement botaoMenu, botaoClassGabinete, botaoEngren, botaoGabinete, botaoAlterarGab, botaoNovaClass, campoDescricao, botaoGravar, botaoMenuFinal, botaoInicio, campoConsulta, botaoEdit, campoEdicao, botaoAlterarEdit, botaoExclusao;
 	
 	
 	public CamposTesteClassificacaoGabinete(WebDriver driver) {
@@ -70,8 +70,8 @@ public class CamposTesteClassificacaoGabinete {
 		botaoInicio = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[1]/app-sidebar/app-menu/ul/li[1]/ul/li/a"));
 	}
 	
-	public void localizarCampoConsultaEdit() {
-		campoConsultaEdit = driver.findElement(By.xpath("//*[@id=\"descricao\"]"));
+	public void localizarCampoConsulta() {
+		campoConsulta = driver.findElement(By.xpath("//*[@id=\"descricao\"]"));
 	}
 	
 	public void localizarBotaoEdit() {
@@ -84,5 +84,9 @@ public class CamposTesteClassificacaoGabinete {
 	
 	public void localizarBotaoAlterarEdit() {
 		botaoAlterarEdit = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[2]/div/ng-component/div/div/form/div/div[2]/span[1]/button"));
+	}
+	
+	public void localizarBotaoExclusao() {
+		botaoExclusao = driver.findElement(By.xpath("//*[@id=\"pn_id_35-table\"]/tbody/tr/td[4]/div[2]"));
 	}
 }

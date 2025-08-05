@@ -31,6 +31,7 @@ public class TestesMain {
         
         classificacaoGabinete.cadastrarClassificacaoGabinete();
         classificacaoGabinete.editarClassificacaoGabinete();
+        
        
        //livro.CadastrarLivro(editoraDto, autorDto, classificacaoDto);
        //livro.VincularLivro(autorDto);
@@ -39,6 +40,7 @@ public class TestesMain {
        //livro.ExcluirLivro();
        //editora.excluirEditora();
        //autor.exclusaoAutor();
+        classificacaoGabinete.excluirClassificacaoGabinite();
        //classificacao.exclusaoClassificacao();
 	}
 }
