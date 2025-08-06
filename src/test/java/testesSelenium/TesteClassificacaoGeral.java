@@ -29,7 +29,7 @@ public class TesteClassificacaoGeral {
 		elemento.localizarBotaoClassificacaoGeral();
 		elemento.getBotaoClassificacaoGeral().click();
 		
-		Thread.sleep(1000);
+		Thread.sleep(4000);
 		
 		elemento.localizarBotaoNovaClassificacao();
 		elemento.getBotaoNovaClassificacao().click();

@@ -1,13 +1,13 @@
 package testesSelenium;
 
 import java.time.Duration;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import br.jus.stf.acervo.model.dto.AutorDto;
 import br.jus.stf.acervo.model.dto.ClassificacaoLivroDto;
 import br.jus.stf.acervo.model.dto.EditoraDto;
@@ -36,7 +36,7 @@ public class TesteLivro {
     }
 	
 	
-	public void CadastrarLivro(EditoraDto editoraDto, AutorDto autorDto, ClassificacaoLivroDto classificacaoDto)throws InterruptedException {
+	public void CadastrarLivro(EditoraDto editoraDto, AutorDto autorDto, ClassificacaoLivroDto classificacao)throws InterruptedException {
 		elemento.botaoMenuLivro = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenuLivro().click();
 		
@@ -62,7 +62,11 @@ public class TesteLivro {
 	    elemento.getCampoVolume().sendKeys(livro.getNumeroEdicao());
 	    elemento.getCampoCodigoColecao().sendKeys(String.valueOf(livro.getCodigoGrupoLivro()));
 	    elemento.getCampoEditora().sendKeys(editoraDto.getNome());
-	    elemento.getCampoClassificacaoGeral().sendKeys(classificacaoDto.getDescricao(), Keys.ENTER);
+	    Thread.sleep(1000);
+	    elemento.getCampoEditora().sendKeys(Keys.ENTER);
+	    elemento.getCampoClassificacaoGeral().sendKeys(classificacao.getDescricao());
+	    Thread.sleep(1000);
+	    elemento.getCampoClassificacaoGeral().sendKeys(Keys.ENTER);
 	    
 	    
 	    elemento.localizarBotaoGravar();
@@ -178,7 +182,6 @@ public class TesteLivro {
 	    elemento.getCampoCodigoColecao().sendKeys(String.valueOf(livro.getCodigoGrupoLivro()));
 	    Thread.sleep(1000);
 	    elemento.getCampoEditora().clear();
-	    elemento.getCampoEditora().sendKeys(editoraDto.getNome(), Keys.ENTER);
 	    //Thread.sleep(1000);
 	    //elemento.getCampoClassificacaoGeral().clear();
 	    //elemento.getCampoClassificacaoGeral().sendKeys("TESTES", Keys.ENTER);

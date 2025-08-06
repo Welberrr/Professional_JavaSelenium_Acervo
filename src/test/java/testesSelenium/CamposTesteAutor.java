@@ -60,8 +60,8 @@ public class CamposTesteAutor {
 	}
 	
 	public void localizarBotoesDel(){
-		botaoCheckDel = driver.findElement(By.xpath("//*[@id=\"pn_id_555-table\"]/tbody/tr/td[1]/p-tablecheckbox/div/div[2]"));
-		botaoDeletar =  driver.findElement(By.xpath("//*[@id=\"pn_id_555-table\"]/tbody/tr/td[4]/div[2]"));
+		botaoCheckDel = driver.findElement(By.xpath("//*[@id=\"pn_id_585-table\"]/tbody/tr/td[1]/p-tablecheckbox/div/div[2]"));
+		botaoDeletar =  driver.findElement(By.xpath("//*[@id=\"pn_id_585-table\"]/tbody/tr/td[4]/div[2]"));
 	}
 	
 	public void localizarBotaoMenuFinal() {

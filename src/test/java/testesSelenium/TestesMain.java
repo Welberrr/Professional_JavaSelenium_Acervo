@@ -3,6 +3,9 @@ package testesSelenium;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import br.jus.stf.acervo.model.dto.AutorDto;
+import br.jus.stf.acervo.model.dto.ClassificacaoLivroDto;
+import br.jus.stf.acervo.model.dto.EditoraDto;
 
 public class TestesMain {
 
@@ -20,27 +23,27 @@ public class TestesMain {
         driver.get("http://localhost:4200/");
         
         
-       //autor.cadastroAutor();
-       //AutorDto autorDto = autor.editarAutor();
+       autor.cadastroAutor();
+       AutorDto autorDto = autor.editarAutor();
         
-       //editora.cadastrarEditora();
-       //EditoraDto editoraDto = editora.editarEditora();
+       editora.cadastrarEditora();
+       EditoraDto editoraDto = editora.editarEditora();
        
-       //classificacao.cadastroClassificacao();
-       //ClassificacaoLivroDto classificacaoDto = classificacao.editarClassificacao();
+       classificacao.cadastroClassificacao();
+       ClassificacaoLivroDto classificacaoDto = classificacao.editarClassificacao();
         
-        classificacaoGabinete.cadastrarClassificacaoGabinete();
-        classificacaoGabinete.editarClassificacaoGabinete();
+       classificacaoGabinete.cadastrarClassificacaoGabinete();
+       classificacaoGabinete.editarClassificacaoGabinete();
         
        
-       //livro.CadastrarLivro(editoraDto, autorDto, classificacaoDto);
-       //livro.VincularLivro(autorDto);
-       //livro.EditarLivro(editoraDto);
+       livro.CadastrarLivro(editoraDto, autorDto, classificacaoDto);
+       livro.VincularLivro(autorDto);
+       livro.EditarLivro(editoraDto);
        
-       //livro.ExcluirLivro();
-       //editora.excluirEditora();
-       //autor.exclusaoAutor();
-        classificacaoGabinete.excluirClassificacaoGabinite();
-       //classificacao.exclusaoClassificacao();
+       livro.ExcluirLivro();
+       editora.excluirEditora();
+       autor.exclusaoAutor();
+       classificacaoGabinete.excluirClassificacaoGabinite();
+       classificacao.exclusaoClassificacao();
 	}
 }

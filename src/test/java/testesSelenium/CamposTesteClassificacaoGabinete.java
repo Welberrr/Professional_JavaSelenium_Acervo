@@ -75,7 +75,7 @@ public class CamposTesteClassificacaoGabinete {
 	}
 	
 	public void localizarBotaoEdit() {
-		botaoEdit = driver.findElement(By.xpath("//*[@id=\"pn_id_18-table\"]/tbody/tr/td[4]/div[1]"));
+		botaoEdit = driver.findElement(By.xpath("//*[@id=\"pn_id_379-table\"]/tbody/tr/td[4]/div[1]"));
 	}
 	
 	public void localizarCampoEdicao() {
@@ -87,6 +87,6 @@ public class CamposTesteClassificacaoGabinete {
 	}
 	
 	public void localizarBotaoExclusao() {
-		botaoExclusao = driver.findElement(By.xpath("//*[@id=\"pn_id_35-table\"]/tbody/tr/td[4]/div[2]"));
+		botaoExclusao = driver.findElement(By.xpath("//*[@id=\"pn_id_638-table\"]/tbody/tr/td[4]/div[2]"));
 	}
 }
