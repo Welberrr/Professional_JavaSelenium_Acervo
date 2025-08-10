@@ -1,33 +1,108 @@
 package testesSelenium;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import lombok.Getter;
+import lombok.Setter;
+
+
+@Getter
+@Setter
 public class CamposTesteAcervo {
 
-	package testesSelenium;
-
-	import java.time.Duration;
-
-	import org.openqa.selenium.WebDriver;
-	import org.openqa.selenium.WebElement;
-	import org.openqa.selenium.support.ui.WebDriverWait;
-
-	import lombok.Getter;
-	import lombok.Setter;
-
-
-	@Getter
-	@Setter
-	public class CamposTesteAcervo {
-
-		private WebDriver driver;
-		private WebDriverWait wait;
-		
-		public CamposTesteAcervo(WebDriver driver) {
-	        this.driver = driver;
-	        this.wait = new WebDriverWait(driver, Duration.ofSeconds(60));
-	        
-	        
-	        WebElement teste;
-	    }
+	private WebDriver driver;
+	private WebDriverWait wait;
+	
+    WebElement botaoMenuInicio, botaoAcervo, botaoEngGabinete, botaoGabinete, botaoAlterar, botaoNovoAcervo, botaoSeleLivro, campoLivroTitulo, campoLivroAutor, campoLivroAno, botaoSelectLivro, botaoSelecionarLivro, campoEmprestado, campoNota, campoObservacao, campoClassGab, botaoGravar, botaoMenuFinal, botaoInicio;
+	
+	public CamposTesteAcervo(WebDriver driver) {
+        this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+    }
+	
+	public WebElement botaoEspera(String xpath) {
+		return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
 	}
-
+	
+	public void localizarBotaoMenuInicio() {
+		botaoMenuInicio = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]"));
+    }
+	
+	public void localizarBotaoAcervo() {
+		botaoAcervo = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[1]/app-sidebar/app-menu/ul/li[3]/ul/li[1]/a"));
+	}
+	
+	public void localizarBotaoEngGabinete() {
+		botaoEngGabinete = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/app-topbar/div[1]/div/button"));
+	}
+	
+	public void localizarBotaoGabinete() {
+		botaoGabinete = driver.findElement(By.xpath("//*[@id=\"pn_id_3_0\"]"));
+	}
+	
+	public void localizarBotaoAlterar() {
+		botaoAlterar = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/app-topbar/div[2]/div/p-dialog/div/div/div[3]/app-configuracao/form/div/div/button"));
+	}
+	
+	public void localizarBotaoNovoAcervo() {
+		botaoNovoAcervo = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[2]/div/ng-component/div/form/div/div/p-toolbar[1]/div/div[2]/button"));
+	}
+	
+	public void localizarBotaoSeleLivro() {
+		botaoSeleLivro = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[2]/div/ng-component/div/div/form/div/div[1]/div[8]/button"));
+	}
+	
+	public void localizarCampoLivroTitulo() {
+		campoLivroTitulo = driver.findElement(By.xpath("//*[@id=\"titulo\"]"));
+	}
+	
+	public void localizarCampoLivroAutor() {
+		campoLivroAutor = driver.findElement(By.xpath("//*[@id=\"autor\"]"));
+	}
+	
+	public void localizarCampoLivroAno() {
+		campoLivroAno = driver.findElement(By.xpath("//*[@id=\"ano\"]"));
+	}
+	
+	public void localizarBotaoSelectLivro() {
+		botaoSelectLivro = driver.findElement(By.xpath("//*[@id=\"pn_id_73-table\"]/tbody/tr/td[1]/p-tableradiobutton/div/div[2]"));
+	}
+	
+	public void localizarBotaoSelecionarLivro() {
+		botaoSelecionarLivro = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[2]/div/ng-component/div/div/p-dialog/div/div/div[3]/app-selecaolivro/div/div/div/span[1]/button"));
+	}
+	
+	public void localizarCampoEmprestado() {
+		campoEmprestado = driver.findElement(By.xpath("//*[@id=\"emprestimo\"]"));
+	}
+	
+	public void localizarCampoNota(){
+		campoNota = driver.findElement(By.xpath("//*[@id=\"nota\"]"));
+	}
+	
+	public void localizarCampoObservacao() {
+		campoObservacao = driver.findElement(By.xpath("//*[@id=\"observacao\"]"));
+	}
+	
+	public void localizarCampoClassGab() {
+		campoClassGab = driver.findElement(By.xpath("//*[@id=\"observacao\"]"));
+	}
+	
+	public void localizarBotaoGravar() {
+		botaoGravar = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[2]/div/ng-component/div/div/form/div/div[3]/span[1]/button"));
+	}
+	
+	public void localizarBotaoMenuFinal() {
+		botaoMenuFinal = driver.findElement(By.xpath("/html/body/app-root/app-layout/div"));
+	}
+	
+	public void localizarBotaoInicio() {
+		botaoInicio = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[1]/app-sidebar/app-menu/ul/li[1]/ul/li/a"));
+	}
 }

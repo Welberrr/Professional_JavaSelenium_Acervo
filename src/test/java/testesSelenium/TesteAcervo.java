@@ -1,52 +1,99 @@
 package testesSelenium;
 
-import java.time.Duration;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import lombok.Getter;
-import lombok.Setter;
-
-
-@Getter
-@Setter
-public class CamposTesteAcervo {
-
-	private WebDriver driver;
-	private WebDriverWait wait;
+public class TesteAcervo {
 	
-    WebElement botaoMenuInicio, botaoAcervo, botaoEngGabinete, botaoGabinete, botaoAlterar;
+	private CamposTesteAcervo elemento;
 	
-	public CamposTesteAcervo(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+	public TesteAcervo(WebDriver driver) {
+		this.elemento = new CamposTesteAcervo(driver);
     }
 	
-	public WebElement botaoEspera(String xpath) {
-		return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
+	public void cadastrarAcervo() throws InterruptedException {
+		elemento.botaoMenuInicio = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
+		elemento.getBotaoMenuInicio().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoAcervo();
+		elemento.getBotaoAcervo().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoEngGabinete();
+		elemento.getBotaoEngGabinete().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoGabinete();
+		elemento.getBotaoGabinete().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoAlterar();
+		elemento.getBotaoAlterar().click();
+		Thread.sleep(1000);
+		
+		
+		elemento.localizarBotaoNovoAcervo();
+		elemento.getBotaoNovoAcervo().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoSeleLivro();
+		elemento.getBotaoSeleLivro().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarCampoLivroTitulo();
+		elemento.getCampoLivroTitulo().sendKeys("teste");
+		Thread.sleep(1000);
+		
+		elemento.localizarCampoLivroAutor();
+		elemento.getCampoLivroAutor().sendKeys("teste");
+		Thread.sleep(1000);
+		
+		elemento.localizarCampoLivroAno();
+		elemento.getCampoLivroAno().sendKeys("teste");
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoSelectLivro();
+		elemento.getBotaoSelectLivro().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoSelecionarLivro();
+		elemento.getBotaoSelecionarLivro().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarCampoEmprestado();
+		elemento.getCampoEmprestado().sendKeys("teste");
+		Thread.sleep(1000);
+		
+		elemento.localizarCampoNota();
+		elemento.getCampoNota().sendKeys("5");
+		Thread.sleep(1000);
+		
+		elemento.localizarCampoClassGab();
+		elemento.getCampoClassGab().sendKeys("teste");
+		Thread.sleep(1000);
+		
+		elemento.localizarCampoObservacao();
+		elemento.getCampoObservacao().sendKeys("teste");
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoGravar();
+		elemento.getBotaoGravar().click();
+		Thread.sleep(1000);
+		
+		
+		elemento.localizarBotaoMenuFinal();
+		elemento.getBotaoMenuFinal().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoInicio();
+		elemento.getBotaoInicio().click();
 	}
 	
-	public void localizarBotaoMenuInicio() {
-		botaoMenuInicio = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]"));
-    }
-	
-	public void localizarBotaoAcervo() {
-		botaoAcervo = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[1]/app-sidebar/app-menu/ul/li[3]/ul/li[1]/a"));
+	public void editarAcervo() {
+		
 	}
 	
-	public void localizarBotaoEngGabinete() {
-		botaoEngGabinete = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/app-topbar/div[1]/div/button"));
-	}
-	
-	public void localizarBotaoGabinete() {
-		botaoGabinete = driver.findElement(By.xpath("//*[@id=\"pn_id_3_0\"]"));
-	}
-	
-	public void localizarBotaoAlterar() {
-		botaoAlterar = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/app-topbar/div[2]/div/p-dialog/div/div/div[3]/app-configuracao/form/div/div/button"));
+	public void excluirAcervo() {
+		
 	}
 }
