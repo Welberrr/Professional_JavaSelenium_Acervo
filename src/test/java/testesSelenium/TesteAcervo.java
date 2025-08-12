@@ -150,7 +150,38 @@ public class TesteAcervo {
 		elemento.getBotaoInicio().click();
 	}
 	
-	public void excluirAcervo() {
+	public void excluirAcervo() throws InterruptedException {
+		elemento.botaoMenuInicio = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
+		elemento.getBotaoMenuInicio().click();
+		Thread.sleep(1000);
 		
+		elemento.localizarBotaoAcervo();
+		elemento.getBotaoAcervo().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoEngGabinete();
+		elemento.getBotaoEngGabinete().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoGabinete();
+		elemento.getBotaoGabinete().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoAlterar();
+		elemento.getBotaoAlterar().click();
+		Thread.sleep(1000);
+		
+		
+		elemento.localizarBotaoExclusao();
+		elemento.getBotaoExclusao().click();
+		Thread.sleep(1000);
+		
+		
+		elemento.localizarBotaoMenuFinal();
+		elemento.getBotaoMenuFinal().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoInicio();
+		elemento.getBotaoInicio().click();
 	}
 }

@@ -23,8 +23,9 @@ public class TestesMain {
         
         driver.get("http://localhost:4200/");
         
-        acervo.cadastrarAcervo();
-        acervo.editarAcervo();
+        //acervo.cadastrarAcervo();
+        //acervo.editarAcervo();
+        acervo.excluirAcervo();
         
         //autor.cadastroAutor();
         //AutorDto autorDto = autor.editarAutor();
