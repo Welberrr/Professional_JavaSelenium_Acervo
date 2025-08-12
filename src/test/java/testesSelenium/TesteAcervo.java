@@ -96,8 +96,58 @@ public class TesteAcervo {
 		elemento.getBotaoInicio().click();
 	}
 	
-	public void editarAcervo() {
+	public void editarAcervo() throws InterruptedException {
+		elemento.botaoMenuInicio = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
+		elemento.getBotaoMenuInicio().click();
+		Thread.sleep(1000);
 		
+		elemento.localizarBotaoAcervo();
+		elemento.getBotaoAcervo().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoEngGabinete();
+		elemento.getBotaoEngGabinete().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoGabinete();
+		elemento.getBotaoGabinete().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoAlterar();
+		elemento.getBotaoAlterar().click();
+		Thread.sleep(1000);
+		
+		
+		elemento.localizarBotaoEdicao();
+		elemento.getBotaoEdicao().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarCampoEmprestado();
+		elemento.getCampoEmprestado().clear();
+		elemento.getCampoEmprestado().sendKeys("Teste Editado");
+		Thread.sleep(1000);
+		
+		elemento.localizarCampoNota();
+		elemento.getCampoNota().clear();
+		elemento.getCampoNota().sendKeys("10");
+		Thread.sleep(1000);
+		
+		elemento.localizarCampoObservacao();
+		elemento.getCampoObservacao().clear();
+		elemento.getCampoObservacao().sendKeys("Teste Editado");
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoAlterarEdit();
+		elemento.getBotaoAlterarEdit().click();
+		Thread.sleep(1000);
+		
+		
+		elemento.localizarBotaoMenuFinal();
+		elemento.getBotaoMenuFinal().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoInicio();
+		elemento.getBotaoInicio().click();
 	}
 	
 	public void excluirAcervo() {

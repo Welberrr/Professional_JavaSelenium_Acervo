@@ -19,7 +19,7 @@ public class CamposTesteAcervo {
 	private WebDriver driver;
 	private WebDriverWait wait;
 	
-    WebElement botaoMenuInicio, botaoAcervo, botaoEngGabinete, botaoGabinete, botaoAlterar, botaoNovoAcervo, botaoSeleLivro, campoLivroTitulo, campoLivroAutor, campoLivroAno, botaoSelectLivro, botaoSelecionarLivro, campoEmprestado, campoNota, campoObservacao, campoClassGab, botaoGravar, botaoMenuFinal, botaoInicio, botaoPesquisar;
+    WebElement botaoMenuInicio, botaoAcervo, botaoEngGabinete, botaoGabinete, botaoAlterar, botaoNovoAcervo, botaoSeleLivro, campoLivroTitulo, campoLivroAutor, campoLivroAno, botaoSelectLivro, botaoSelecionarLivro, campoEmprestado, campoNota, campoObservacao, campoClassGab, botaoGravar, botaoMenuFinal, botaoInicio, botaoPesquisar, botaoEdicao, botaoAlterarEdit;
 	
 	public CamposTesteAcervo(WebDriver driver) {
         this.driver = driver;
@@ -108,5 +108,13 @@ public class CamposTesteAcervo {
 	
 	public void localizarBotaoInicio() {
 		botaoInicio = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[1]/app-sidebar/app-menu/ul/li[1]/ul/li/a"));
+	}
+	
+	public void localizarBotaoEdicao() {
+		botaoEdicao = driver.findElement(By.xpath("//*[@id=\"pn_id_7-table\"]/tbody/tr/td[6]/div[1]"));
+	}
+	
+	public void localizarBotaoAlterarEdit() {
+		botaoAlterarEdit = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[2]/div/ng-component/div/div/form/div/div[3]/span[1]/button"));
 	}
 }
