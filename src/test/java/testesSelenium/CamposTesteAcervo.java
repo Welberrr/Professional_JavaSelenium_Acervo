@@ -111,7 +111,7 @@ public class CamposTesteAcervo {
 	}
 	
 	public void localizarBotaoEdicao() {
-		botaoEdicao = driver.findElement(By.xpath("//*[@id=\"pn_id_7-table\"]/tbody/tr/td[6]/div[1]"));
+		botaoEdicao = driver.findElement(By.xpath("//*[@id=\"pn_id_29-table\"]/tbody/tr/td[6]/div[1]"));
 	}
 	
 	public void localizarBotaoAlterarEdit() {
