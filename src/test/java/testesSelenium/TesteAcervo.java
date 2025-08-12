@@ -1,5 +1,6 @@
 package testesSelenium;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 public class TesteAcervo {
@@ -41,16 +42,20 @@ public class TesteAcervo {
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoLivroTitulo();
-		elemento.getCampoLivroTitulo().sendKeys("teste");
+		elemento.getCampoLivroTitulo().sendKeys("AS CRONICAS DE NARNIA");
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoLivroAutor();
-		elemento.getCampoLivroAutor().sendKeys("teste");
+		elemento.getCampoLivroAutor().sendKeys("C.S Lewis");
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoLivroAno();
-		elemento.getCampoLivroAno().sendKeys("teste");
+		elemento.getCampoLivroAno().sendKeys("2009");
 		Thread.sleep(1000);
+		
+		elemento.localizarBotaoPesquisar();
+		elemento.getBotaoPesquisar().click();
+		Thread.sleep(4000);
 		
 		elemento.localizarBotaoSelectLivro();
 		elemento.getBotaoSelectLivro().click();
@@ -70,6 +75,8 @@ public class TesteAcervo {
 		
 		elemento.localizarCampoClassGab();
 		elemento.getCampoClassGab().sendKeys("teste");
+		Thread.sleep(1000);
+		elemento.getCampoClassGab().sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoObservacao();

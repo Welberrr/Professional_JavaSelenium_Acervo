@@ -19,7 +19,7 @@ public class CamposTesteAcervo {
 	private WebDriver driver;
 	private WebDriverWait wait;
 	
-    WebElement botaoMenuInicio, botaoAcervo, botaoEngGabinete, botaoGabinete, botaoAlterar, botaoNovoAcervo, botaoSeleLivro, campoLivroTitulo, campoLivroAutor, campoLivroAno, botaoSelectLivro, botaoSelecionarLivro, campoEmprestado, campoNota, campoObservacao, campoClassGab, botaoGravar, botaoMenuFinal, botaoInicio;
+    WebElement botaoMenuInicio, botaoAcervo, botaoEngGabinete, botaoGabinete, botaoAlterar, botaoNovoAcervo, botaoSeleLivro, campoLivroTitulo, campoLivroAutor, campoLivroAno, botaoSelectLivro, botaoSelecionarLivro, campoEmprestado, campoNota, campoObservacao, campoClassGab, botaoGravar, botaoMenuFinal, botaoInicio, botaoPesquisar;
 	
 	public CamposTesteAcervo(WebDriver driver) {
         this.driver = driver;
@@ -71,11 +71,15 @@ public class CamposTesteAcervo {
 	}
 	
 	public void localizarBotaoSelectLivro() {
-		botaoSelectLivro = driver.findElement(By.xpath("//*[@id=\"pn_id_73-table\"]/tbody/tr/td[1]/p-tableradiobutton/div/div[2]"));
+		botaoSelectLivro = driver.findElement(By.xpath("//*[@id=\"pn_id_17-table\"]/tbody/tr/td[1]/p-tableradiobutton/div/div[2]"));
 	}
 	
 	public void localizarBotaoSelecionarLivro() {
 		botaoSelecionarLivro = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[2]/div/ng-component/div/div/p-dialog/div/div/div[3]/app-selecaolivro/div/div/div/span[1]/button"));
+	}
+	
+	public void localizarBotaoPesquisar() {
+		botaoPesquisar = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[2]/div/ng-component/div/div/p-dialog/div/div/div[3]/app-selecaolivro/div/div/form/div/p-toolbar/div/div[4]/p-button/button/span[1]"));
 	}
 	
 	public void localizarCampoEmprestado() {
@@ -91,7 +95,7 @@ public class CamposTesteAcervo {
 	}
 	
 	public void localizarCampoClassGab() {
-		campoClassGab = driver.findElement(By.xpath("//*[@id=\"observacao\"]"));
+		campoClassGab = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[2]/div/ng-component/div/div/form/div/div[2]/div[2]/div/p-autocomplete/div/input"));
 	}
 	
 	public void localizarBotaoGravar() {
@@ -99,7 +103,7 @@ public class CamposTesteAcervo {
 	}
 	
 	public void localizarBotaoMenuFinal() {
-		botaoMenuFinal = driver.findElement(By.xpath("/html/body/app-root/app-layout/div"));
+		botaoMenuFinal = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]"));
 	}
 	
 	public void localizarBotaoInicio() {
