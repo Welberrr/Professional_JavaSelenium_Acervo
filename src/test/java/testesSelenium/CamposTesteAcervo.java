@@ -19,7 +19,7 @@ public class CamposTesteAcervo {
 	private WebDriver driver;
 	private WebDriverWait wait;
 	
-    WebElement botaoMenuInicio, botaoAcervo, botaoEngGabinete, botaoGabinete, botaoAlterar, botaoNovoAcervo, botaoSeleLivro, campoLivroTitulo, campoLivroAutor, campoLivroAno, botaoSelectLivro, botaoSelecionarLivro, campoEmprestado, campoNota, campoObservacao, campoClassGab, botaoGravar, botaoMenuFinal, botaoInicio, botaoPesquisar, botaoEdicao, botaoAlterarEdit, botaoExclusao;
+    WebElement botaoMenuInicio, botaoAcervo, botaoEngGabinete, botaoGabinete, botaoAlterar, botaoNovoAcervo, botaoSeleLivro, campoLivroTitulo, campoLivroAutor, campoLivroAno, botaoSelectLivro, botaoSelecionarLivro, campoEmprestado, campoNota, campoObservacao, campoClassGab, botaoGravar, botaoMenuFinal, botaoInicio, botaoPesquisar, botaoEdicao, botaoAlterarEdit, botaoExclusao, campoTituloCons, campoAutorCons, botaoPesquisarCons;
 	
 	public CamposTesteAcervo(WebDriver driver) {
         this.driver = driver;
@@ -43,7 +43,7 @@ public class CamposTesteAcervo {
 	}
 	
 	public void localizarBotaoGabinete() {
-		botaoGabinete = driver.findElement(By.xpath("//*[@id=\"pn_id_3_0\"]"));
+		botaoGabinete = driver.findElement(By.xpath("//*[@id=\"pn_id_3_9\"]"));
 	}
 	
 	public void localizarBotaoAlterar() {
@@ -119,6 +119,19 @@ public class CamposTesteAcervo {
 	}
 	
 	public void localizarBotaoExclusao() {
-		botaoExclusao = driver.findElement(By.xpath("//*[@id=\"pn_id_54-table\"]/tbody/tr/td[6]/div[2]"));
+		botaoExclusao = driver.findElement(By.xpath("//*[@id=\"pn_id_7-table\"]/tbody/tr/td[6]/div[2]"));
+	}
+	
+	
+	public void localizarCampoTituloCons() {
+		campoTituloCons = driver.findElement(By.xpath("//*[@id=\"titulo\"]"));
+	}
+	
+	public void localizarCampoAutorCons() {
+		campoAutorCons = driver.findElement(By.xpath("//*[@id=\"autor\"]"));
+	}
+	
+	public void localizarBotaoPesquisarCons() {
+		botaoPesquisarCons = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[2]/div/ng-component/div/form/div/div/p-toolbar[2]/div/div[2]/p-button[1]/button"));
 	}
 }

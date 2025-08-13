@@ -118,6 +118,19 @@ public class TesteAcervo {
 		Thread.sleep(1000);
 		
 		
+		elemento.localizarCampoTituloCons();
+		elemento.getCampoTituloCons().sendKeys("Teste");
+		Thread.sleep(1000);
+		
+		elemento.localizarCampoAutorCons();
+		elemento.getCampoAutorCons().sendKeys("teste");
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoPesquisarCons();
+		elemento.getBotaoPesquisarCons().click();
+		Thread.sleep(3000);
+		
+		
 		elemento.localizarBotaoEdicao();
 		elemento.getBotaoEdicao().click();
 		Thread.sleep(1000);
@@ -170,6 +183,19 @@ public class TesteAcervo {
 		elemento.localizarBotaoAlterar();
 		elemento.getBotaoAlterar().click();
 		Thread.sleep(1000);
+		
+		
+		elemento.localizarCampoTituloCons();
+		elemento.getCampoTituloCons().sendKeys("Teste");
+		Thread.sleep(1000);
+		
+		elemento.localizarCampoAutorCons();
+		elemento.getCampoAutorCons().sendKeys("teste");
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoPesquisarCons();
+		elemento.getBotaoPesquisarCons().click();
+		Thread.sleep(3000);
 		
 		
 		elemento.localizarBotaoExclusao();
