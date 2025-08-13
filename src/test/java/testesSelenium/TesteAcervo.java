@@ -8,10 +8,30 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import br.jus.stf.acervo.model.dto.AutorDto;
+import br.jus.stf.acervo.model.dto.ClassificacaoLivroDto;
+import br.jus.stf.acervo.model.dto.LivroDto;
+
 public class TesteAcervo {
 	
 	private CamposTesteAcervo elemento;
 	private WebDriver driver;
+	
+	
+	LivroDto livro = new LivroDto(
+		    "As Crônicas de Nárnia: O Leão, a Feiticeira e o Guarda-Roupa", // titulo
+		    "A.C.N", // Iniciais
+		    "Fantasia, aventura em mundo mágico", // assunto
+		    "9788578270698", // ISBN
+		    2009L, // anoEdicao
+		    "1", // numeroEdicao
+		    "I", // volume (volume romano ou número)
+		    1001L // codigoGrupoLivro
+		);
+	
+	 AutorDto autor = (new AutorDto("C.S Lewis", "CLSW"));
+	 ClassificacaoLivroDto classificacao = new ClassificacaoLivroDto ("Teste Selenium");
+	
 	
 	public TesteAcervo(WebDriver driver) {
 		this.driver = driver;
@@ -49,15 +69,15 @@ public class TesteAcervo {
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoLivroTitulo();
-		elemento.getCampoLivroTitulo().sendKeys("AS CRONICAS DE NARNIA");
+		elemento.getCampoLivroTitulo().sendKeys(livro.getTitulo());
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoLivroAutor();
-		elemento.getCampoLivroAutor().sendKeys("C.S Lewis");
+		elemento.getCampoLivroAutor().sendKeys(autor.getNome());
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoLivroAno();
-		elemento.getCampoLivroAno().sendKeys("2009");
+		elemento.getCampoLivroAno().sendKeys(String.valueOf(livro.getAnoEdicao()));
 		Thread.sleep(1000);
 		
 		elemento.localizarBotaoPesquisar();
@@ -73,7 +93,7 @@ public class TesteAcervo {
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoEmprestado();
-		elemento.getCampoEmprestado().sendKeys("teste");
+		elemento.getCampoEmprestado().sendKeys("teste emprestado");
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoNota();
@@ -81,13 +101,13 @@ public class TesteAcervo {
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoClassGab();
-		elemento.getCampoClassGab().sendKeys("teste");
+		elemento.getCampoClassGab().sendKeys(classificacao.getDescricao());
 		Thread.sleep(1000);
 		elemento.getCampoClassGab().sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoObservacao();
-		elemento.getCampoObservacao().sendKeys("teste");
+		elemento.getCampoObservacao().sendKeys("teste observacao");
 		Thread.sleep(1000);
 		
 		elemento.localizarBotaoGravar();
@@ -126,11 +146,11 @@ public class TesteAcervo {
 		
 		
 		elemento.localizarCampoTituloCons();
-		elemento.getCampoTituloCons().sendKeys("As cronicas de Narnia");
+		elemento.getCampoTituloCons().sendKeys(livro.getTitulo());
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoAutorCons();
-		elemento.getCampoAutorCons().sendKeys("C.s Lewis");
+		elemento.getCampoAutorCons().sendKeys(autor.getNome());
 		Thread.sleep(1000);
 		
 		elemento.localizarBotaoPesquisarCons();
@@ -144,7 +164,7 @@ public class TesteAcervo {
 		
 		elemento.localizarCampoEmprestado();
 		elemento.getCampoEmprestado().clear();
-		elemento.getCampoEmprestado().sendKeys("Teste Editado");
+		elemento.getCampoEmprestado().sendKeys("Emprestado Editado");
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoNota();
@@ -154,7 +174,7 @@ public class TesteAcervo {
 		
 		elemento.localizarCampoObservacao();
 		elemento.getCampoObservacao().clear();
-		elemento.getCampoObservacao().sendKeys("Teste Editado");
+		elemento.getCampoObservacao().sendKeys("Observacao Editado");
 		Thread.sleep(1000);
 		
 		elemento.localizarBotaoAlterarEdit();
@@ -193,11 +213,11 @@ public class TesteAcervo {
 		
 		
 		elemento.localizarCampoTituloCons();
-		elemento.getCampoTituloCons().sendKeys("as cronicas de narnia");
+		elemento.getCampoTituloCons().sendKeys(livro.getTitulo());
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoAutorCons();
-		elemento.getCampoAutorCons().sendKeys("c.s lewis");
+		elemento.getCampoAutorCons().sendKeys(autor.getNome());
 		Thread.sleep(1000);
 		
 		elemento.localizarBotaoPesquisarCons();

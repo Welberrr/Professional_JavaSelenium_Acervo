@@ -23,31 +23,31 @@ public class TestesMain {
         
         driver.get("http://localhost:4200/");
         
+
+        autor.cadastroAutor();
+        AutorDto autorDto = autor.editarAutor();
+        
+        editora.cadastrarEditora();
+        EditoraDto editoraDto = editora.editarEditora();
+       
+        classificacao.cadastroClassificacao();
+        ClassificacaoLivroDto classificacaoDto = classificacao.editarClassificacao();
+        
+        classificacaoGabinete.cadastrarClassificacaoGabinete();
+        classificacaoGabinete.editarClassificacaoGabinete();
+        
+       
+        livro.CadastrarLivro(editoraDto, autorDto, classificacaoDto);
+        livro.VincularLivro(autorDto);
+        livro.EditarLivro(editoraDto);
+        
         acervo.cadastrarAcervo();
         acervo.editarAcervo();
         acervo.excluirAcervo();
-        
-        //autor.cadastroAutor();
-        //AutorDto autorDto = autor.editarAutor();
-        
-        //editora.cadastrarEditora();
-        //EditoraDto editoraDto = editora.editarEditora();
-       
-        //classificacao.cadastroClassificacao();
-        //ClassificacaoLivroDto classificacaoDto = classificacao.editarClassificacao();
-        
-        //classificacaoGabinete.cadastrarClassificacaoGabinete();
-        //classificacaoGabinete.editarClassificacaoGabinete();
-        
-       
-        //livro.CadastrarLivro(editoraDto, autorDto, classificacaoDto);
-        //livro.VincularLivro(autorDto);
-        //livro.EditarLivro(editoraDto);
-       
-        //livro.ExcluirLivro();
-        //editora.excluirEditora();
-        //autor.exclusaoAutor();
-        //classificacaoGabinete.excluirClassificacaoGabinite();
-        //classificacao.exclusaoClassificacao();
+        livro.ExcluirLivro();
+        editora.excluirEditora();
+        autor.exclusaoAutor();
+        classificacaoGabinete.excluirClassificacaoGabinite();
+        classificacao.exclusaoClassificacao();
 	}
 }
