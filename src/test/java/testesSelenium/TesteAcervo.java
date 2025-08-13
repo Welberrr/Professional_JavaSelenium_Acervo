@@ -1,13 +1,20 @@
 package testesSelenium;
 
+import java.time.Duration;
+
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class TesteAcervo {
 	
 	private CamposTesteAcervo elemento;
+	private WebDriver driver;
 	
 	public TesteAcervo(WebDriver driver) {
+		this.driver = driver;
 		this.elemento = new CamposTesteAcervo(driver);
     }
 	
@@ -119,11 +126,11 @@ public class TesteAcervo {
 		
 		
 		elemento.localizarCampoTituloCons();
-		elemento.getCampoTituloCons().sendKeys("Teste");
+		elemento.getCampoTituloCons().sendKeys("As cronicas de Narnia");
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoAutorCons();
-		elemento.getCampoAutorCons().sendKeys("teste");
+		elemento.getCampoAutorCons().sendKeys("C.s Lewis");
 		Thread.sleep(1000);
 		
 		elemento.localizarBotaoPesquisarCons();
@@ -186,11 +193,11 @@ public class TesteAcervo {
 		
 		
 		elemento.localizarCampoTituloCons();
-		elemento.getCampoTituloCons().sendKeys("Teste");
+		elemento.getCampoTituloCons().sendKeys("as cronicas de narnia");
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoAutorCons();
-		elemento.getCampoAutorCons().sendKeys("teste");
+		elemento.getCampoAutorCons().sendKeys("c.s lewis");
 		Thread.sleep(1000);
 		
 		elemento.localizarBotaoPesquisarCons();
@@ -202,6 +209,18 @@ public class TesteAcervo {
 		elemento.getBotaoExclusao().click();
 		Thread.sleep(1000);
 		
+	
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.alertIsPresent());
+
+		while (true) {
+		    try {
+		        driver.switchTo().alert();
+		        Thread.sleep(500);
+		    } catch (NoAlertPresentException e) {
+		        break;
+		    }
+		}
 		
 		elemento.localizarBotaoMenuFinal();
 		elemento.getBotaoMenuFinal().click();

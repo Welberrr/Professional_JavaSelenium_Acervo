@@ -71,7 +71,7 @@ public class CamposTesteAcervo {
 	}
 	
 	public void localizarBotaoSelectLivro() {
-		botaoSelectLivro = driver.findElement(By.xpath("//*[@id=\"pn_id_17-table\"]/tbody/tr/td[1]/p-tableradiobutton/div/div[2]"));
+		botaoSelectLivro = driver.findElement(By.xpath("//*[@id=\"pn_id_37-table\"]/tbody/tr/td[1]/p-tableradiobutton/div/div[2]"));
 	}
 	
 	public void localizarBotaoSelecionarLivro() {
@@ -111,7 +111,7 @@ public class CamposTesteAcervo {
 	}
 	
 	public void localizarBotaoEdicao() {
-		botaoEdicao = driver.findElement(By.xpath("//*[@id=\"pn_id_29-table\"]/tbody/tr/td[6]/div[1]"));
+		botaoEdicao = driver.findElement(By.xpath("//*[@id=\"pn_id_49-table\"]/tbody/tr/td[6]/div[1]"));
 	}
 	
 	public void localizarBotaoAlterarEdit() {
@@ -119,7 +119,7 @@ public class CamposTesteAcervo {
 	}
 	
 	public void localizarBotaoExclusao() {
-		botaoExclusao = driver.findElement(By.xpath("//*[@id=\"pn_id_7-table\"]/tbody/tr/td[6]/div[2]"));
+		botaoExclusao = driver.findElement(By.xpath("//*[@id=\"pn_id_113-table\"]/tbody/tr/td[6]/div[2]"));
 	}
 	
 	
