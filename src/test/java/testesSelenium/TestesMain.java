@@ -3,9 +3,11 @@ package testesSelenium;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 import br.jus.stf.acervo.model.dto.AutorDto;
 import br.jus.stf.acervo.model.dto.ClassificacaoLivroDto;
 import br.jus.stf.acervo.model.dto.EditoraDto;
+import br.jus.stf.acervo.model.dto.LivroDto;
 
 public class TestesMain {
 
@@ -39,11 +41,12 @@ public class TestesMain {
        
         livro.CadastrarLivro(editoraDto, autorDto, classificacaoDto);
         livro.VincularLivro(autorDto);
-        livro.EditarLivro(editoraDto);
+        LivroDto livroDto = livro.EditarLivro(editoraDto);
         
-        acervo.cadastrarAcervo();
-        acervo.editarAcervo();
-        acervo.excluirAcervo();
+        acervo.cadastrarAcervo(livroDto, autorDto, classificacaoDto);
+        acervo.editarAcervo(livroDto, autorDto, classificacaoDto);
+        acervo.excluirAcervo(livroDto, autorDto, classificacaoDto);
+        
         livro.ExcluirLivro();
         editora.excluirEditora();
         autor.exclusaoAutor();

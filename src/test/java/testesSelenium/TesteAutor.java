@@ -22,7 +22,7 @@ public class TesteAutor{
     }
 	
 	
-    AutorDto autor = (new AutorDto("C.S Lewis", "CLSW"));
+    AutorDto autor = (new AutorDto("Autor Selenium", "SELENIUM"));
 	
 	public void cadastroAutor() throws InterruptedException{
 		elemento.botaoMenu = elemento.botaoEspera("//html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");

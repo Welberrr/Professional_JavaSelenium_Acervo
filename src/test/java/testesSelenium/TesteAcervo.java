@@ -7,7 +7,6 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import br.jus.stf.acervo.model.dto.AutorDto;
 import br.jus.stf.acervo.model.dto.ClassificacaoLivroDto;
 import br.jus.stf.acervo.model.dto.LivroDto;
@@ -18,27 +17,13 @@ public class TesteAcervo {
 	private WebDriver driver;
 	
 	
-	LivroDto livro = new LivroDto(
-		    "As Crônicas de Nárnia: O Leão, a Feiticeira e o Guarda-Roupa", // titulo
-		    "A.C.N", // Iniciais
-		    "Fantasia, aventura em mundo mágico", // assunto
-		    "9788578270698", // ISBN
-		    2009L, // anoEdicao
-		    "1", // numeroEdicao
-		    "I", // volume (volume romano ou número)
-		    1001L // codigoGrupoLivro
-		);
-	
-	 AutorDto autor = (new AutorDto("C.S Lewis", "CLSW"));
-	 ClassificacaoLivroDto classificacao = new ClassificacaoLivroDto ("Teste Selenium");
-	
-	
 	public TesteAcervo(WebDriver driver) {
 		this.driver = driver;
 		this.elemento = new CamposTesteAcervo(driver);
     }
 	
-	public void cadastrarAcervo() throws InterruptedException {
+	
+	public void cadastrarAcervo(LivroDto livro, AutorDto autor, ClassificacaoLivroDto classificacao) throws InterruptedException {
 		elemento.botaoMenuInicio = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenuInicio().click();
 		Thread.sleep(1000);
@@ -123,7 +108,7 @@ public class TesteAcervo {
 		elemento.getBotaoInicio().click();
 	}
 	
-	public void editarAcervo() throws InterruptedException {
+	public void editarAcervo(LivroDto livro, AutorDto autor, ClassificacaoLivroDto classificacao) throws InterruptedException {
 		elemento.botaoMenuInicio = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenuInicio().click();
 		Thread.sleep(1000);
@@ -190,7 +175,7 @@ public class TesteAcervo {
 		elemento.getBotaoInicio().click();
 	}
 	
-	public void excluirAcervo() throws InterruptedException {
+	public void excluirAcervo(LivroDto livro, AutorDto autor, ClassificacaoLivroDto classificacao) throws InterruptedException {
 		elemento.botaoMenuInicio = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenuInicio().click();
 		Thread.sleep(1000);
