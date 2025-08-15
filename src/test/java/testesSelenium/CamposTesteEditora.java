@@ -52,7 +52,7 @@ public class CamposTesteEditora {
 	}
 	
 	public void localizarBotaoExclusao() {
-		botaoDelete = driver.findElement(By.xpath("//*[@id=\"pn_id_552-table\"]/tbody/tr/td[3]/div[2]"));
+		botaoDelete = driver.findElement(By.xpath("//*[@id=\"pn_id_813-table\"]/tbody/tr/td[3]/div[2]"));
 	}
 	
 	public void localizarCampoConsulta() {

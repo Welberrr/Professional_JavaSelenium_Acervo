@@ -43,7 +43,7 @@ public class CamposTesteClassificacaoGabinete {
 	}
 	
 	public void LocalizarGabinete() {
-		botaoGabinete = driver.findElement(By.xpath("//*[@id=\"pn_id_3_0\"]/span[1]"));
+		botaoGabinete = driver.findElement(By.xpath("//*[@id=\"pn_id_3_9\"]/span[1]"));
 	}
 	
 	public void localizarBotaoAlterarGab() {
@@ -75,7 +75,7 @@ public class CamposTesteClassificacaoGabinete {
 	}
 	
 	public void localizarBotaoEdit() {
-		botaoEdit = driver.findElement(By.xpath("//*[@id=\"pn_id_379-table\"]/tbody/tr/td[4]/div[1]"));
+		botaoEdit = driver.findElement(By.xpath("//*[@id=\"pn_id_399-table\"]/tbody/tr/td[4]/div[1]"));
 	}
 	
 	public void localizarCampoEdicao() {
@@ -87,6 +87,6 @@ public class CamposTesteClassificacaoGabinete {
 	}
 	
 	public void localizarBotaoExclusao() {
-		botaoExclusao = driver.findElement(By.xpath("//*[@id=\"pn_id_638-table\"]/tbody/tr/td[4]/div[2]"));
+		botaoExclusao = driver.findElement(By.xpath("//*[@id=\"pn_id_935-table\"]/tbody/tr/td[4]/div[2]"));
 	}
 }

@@ -57,13 +57,13 @@ public class TesteAcervo {
 		elemento.getCampoLivroTitulo().sendKeys(livro.getTitulo());
 		Thread.sleep(1000);
 		
-		elemento.localizarCampoLivroAutor();
-		elemento.getCampoLivroAutor().sendKeys(autor.getNome());
-		Thread.sleep(1000);
+		//elemento.localizarCampoLivroAutor();
+		//elemento.getCampoLivroAutor().sendKeys(autor.getNome());
+		//Thread.sleep(1000);
 		
-		elemento.localizarCampoLivroAno();
-		elemento.getCampoLivroAno().sendKeys(String.valueOf(livro.getAnoEdicao()));
-		Thread.sleep(1000);
+		//elemento.localizarCampoLivroAno();
+		//elemento.getCampoLivroAno().sendKeys(String.valueOf(livro.getAnoEdicao()));
+		//Thread.sleep(1000);
 		
 		elemento.localizarBotaoPesquisar();
 		elemento.getBotaoPesquisar().click();
