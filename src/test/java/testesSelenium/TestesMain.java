@@ -22,6 +22,7 @@ public class TestesMain {
         TesteClassificacaoGeral classificacao = new TesteClassificacaoGeral(driver);
         TesteClassificacaoGabinete classificacaoGabinete = new TesteClassificacaoGabinete(driver);
         TesteAcervo acervo = new TesteAcervo(driver);
+        TesteRelatorios relatorios = new TesteRelatorios(driver);
         
         driver.get("http://localhost:4200/");
         
@@ -45,8 +46,10 @@ public class TestesMain {
         
         acervo.cadastrarAcervo(livroDto, autorDto, classificacaoDto);
         acervo.editarAcervo(livroDto, autorDto, classificacaoDto);
-        acervo.excluirAcervo(livroDto, autorDto, classificacaoDto);
         
+        relatorios.cadastrarRelatorioLivro(livroDto, autorDto, classificacaoDto);
+        
+        acervo.excluirAcervo(livroDto, autorDto, classificacaoDto);
         livro.ExcluirLivro();
         editora.excluirEditora();
         autor.exclusaoAutor();
