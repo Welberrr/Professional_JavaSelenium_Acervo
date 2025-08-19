@@ -19,7 +19,7 @@ public class TesteRelatorios {
 	
 	
 	//LivroDto livro, AutorDto autor, ClassificacaoLivroDto classificacao
-	public void cadastrarRelatorioLivro() throws InterruptedException {
+	public void gerarRelatorioLivro() throws InterruptedException {
 		elemento.botaoMenuInicio = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenuInicio().click();
 		Thread.sleep(1000);
@@ -73,6 +73,38 @@ public class TesteRelatorios {
 		
 		elemento.localizarBotaoXLSX();
 		elemento.getBotaoXLSX().click();
+		Thread.sleep(1000);
+	}
+	
+	public void gerarRelatorioSintetico() throws InterruptedException {
+		elemento.botaoMenuInicio = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
+		elemento.getBotaoMenuInicio().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoRelatorios();
+		elemento.getBotaoRelatorios().click();
+		Thread.sleep(1000);
+		
+		
+		elemento.localizarBotaoEngGab();
+		elemento.getBotaoEngGab().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoGab();
+		elemento.getBotaoGab().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoAlterarGab();
+		elemento.getBotaoAlterarGab().click();
+		Thread.sleep(1000);
+		
+		
+		elemento.localizarBotaoRelatorioSintetico();
+		elemento.getBotaoRelatorioSintetico().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarCampoClassSintetico();
+		elemento.getCampoClassSintetico().sendKeys("Teste");
 		Thread.sleep(1000);
 	}
 }

@@ -18,7 +18,7 @@ public class CamposTesteRelatorios {
 	private WebDriver driver;
 	private WebDriverWait wait;
 	
-	WebElement botaoMenuInicio, BotaoRelatorios, botaoEngGab, botaoGab, botaoAlterarGab, titulo, classificacao, autor, anoEdicao, volume, edicao, botaoPesquisar, botaoXLSX;
+	WebElement botaoMenuInicio, BotaoRelatorios, botaoEngGab, botaoGab, botaoAlterarGab, titulo, classificacao, autor, anoEdicao, volume, edicao, botaoPesquisar, botaoXLSX, botaoRelatorioSintetico, campoClassSintetico;
 	
 	public CamposTesteRelatorios(WebDriver driver){
 		this.driver = driver;
@@ -82,5 +82,14 @@ public class CamposTesteRelatorios {
 	
 	public void localizarBotaoXLSX() {
 		botaoXLSX = driver.findElement(By.xpath("//*[@id=\"pn_id_7_content\"]/form/p-toolbar/div/div[2]/div/button/span[2]"));
+	}
+	
+	
+	public void localizarBotaoRelatorioSintetico() {
+		botaoRelatorioSintetico = driver.findElement(By.xpath("//*[@id=\"pn_id_9_header_action\"]"));
+	}
+	
+	public void localizarCampoClassSintetico() {
+		campoClassSintetico = driver.findElement(By.xpath("//*[@id=\"classificacao\"]"));
 	}
 }
