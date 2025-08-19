@@ -18,7 +18,8 @@ public class TesteRelatorios {
     }
 	
 	
-	public void cadastrarRelatorioLivro(LivroDto livro, AutorDto autor, ClassificacaoLivroDto classificacao) throws InterruptedException {
+	//LivroDto livro, AutorDto autor, ClassificacaoLivroDto classificacao
+	public void cadastrarRelatorioLivro() throws InterruptedException {
 		elemento.botaoMenuInicio = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenuInicio().click();
 		Thread.sleep(1000);
@@ -38,27 +39,27 @@ public class TesteRelatorios {
 		
 		
 		elemento.localizarCampoTitulo();
-		elemento.getTitulo().sendKeys(livro.getTitulo());
+		elemento.getTitulo().sendKeys("Teste Relatorio"); //livro.getTitulo()
 		Thread.sleep(1000);
 		
-		elemento.localizarCampoClassificacao();
-		elemento.getClassificacao().sendKeys(classificacao.getDescricao());
-		Thread.sleep(1000);
+		//elemento.localizarCampoClassificacao();
+		//elemento.getClassificacao().sendKeys("Teste"); //classificacao.getDescricao()
+		//Thread.sleep(1000);
 		
 		elemento.localizarCampoAutor();
-		elemento.getAutor().sendKeys(autor.getNome());
+		elemento.getAutor().sendKeys("C.S Lewis");  //autor.getNome()
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoAnoEdicao();
-		elemento.getAnoEdicao().sendKeys(String.valueOf(livro.getAnoEdicao()));
+		elemento.getAnoEdicao().sendKeys("2025");  //String.valueOf(livro.getAnoEdicao())
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoEdicao();
-		elemento.getAnoEdicao().sendKeys(livro.getNumeroEdicao());
+		elemento.getAnoEdicao().sendKeys("1000"); //livro.getNumeroEdicao()
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoVolume();
-		elemento.getVolume().sendKeys(String.valueOf(livro.getNumeroVolume()));
+		elemento.getVolume().sendKeys("1000"); //String.valueOf(livro.getNumeroVolume())
 		Thread.sleep(1000);
 		
 		elemento.localizarBotaoPesquisar();

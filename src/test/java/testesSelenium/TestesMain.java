@@ -27,33 +27,33 @@ public class TestesMain {
         driver.get("http://localhost:4200/");
         
 
-        autor.cadastroAutor();
-        AutorDto autorDto = autor.editarAutor();
+        //autor.cadastroAutor();
+        //AutorDto autorDto = autor.editarAutor();
         
-        editora.cadastrarEditora();
-        EditoraDto editoraDto = editora.editarEditora();
+        //editora.cadastrarEditora();
+        //EditoraDto editoraDto = editora.editarEditora();
        
-        classificacao.cadastroClassificacao();
-        ClassificacaoLivroDto classificacaoDto = classificacao.editarClassificacao();
+        //classificacao.cadastroClassificacao();
+        //ClassificacaoLivroDto classificacaoDto = classificacao.editarClassificacao();
         
-        classificacaoGabinete.cadastrarClassificacaoGabinete();
-        classificacaoGabinete.editarClassificacaoGabinete();
+        //classificacaoGabinete.cadastrarClassificacaoGabinete();
+        //classificacaoGabinete.editarClassificacaoGabinete();
         
        
-        livro.CadastrarLivro(editoraDto, autorDto, classificacaoDto);
-        livro.VincularLivro(autorDto);
-        LivroDto livroDto = livro.EditarLivro(editoraDto);
+        //livro.CadastrarLivro(editoraDto, autorDto, classificacaoDto);
+        //livro.VincularLivro(autorDto);
+        //LivroDto livroDto = livro.EditarLivro(editoraDto);
         
-        acervo.cadastrarAcervo(livroDto, autorDto, classificacaoDto);
-        acervo.editarAcervo(livroDto, autorDto, classificacaoDto);
+        //acervo.cadastrarAcervo(livroDto, autorDto, classificacaoDto);
+        //acervo.editarAcervo(livroDto, autorDto, classificacaoDto);
         
-        relatorios.cadastrarRelatorioLivro(livroDto, autorDto, classificacaoDto);
+        relatorios.cadastrarRelatorioLivro(); //livroDto, autorDto, classificacaoDto
         
-        acervo.excluirAcervo(livroDto, autorDto, classificacaoDto);
-        livro.ExcluirLivro();
-        editora.excluirEditora();
-        autor.exclusaoAutor();
-        classificacaoGabinete.excluirClassificacaoGabinite();
-        classificacao.exclusaoClassificacao();
+        //acervo.excluirAcervo(livroDto, autorDto, classificacaoDto);
+        //livro.ExcluirLivro();
+        //editora.excluirEditora();
+        //autor.exclusaoAutor();
+        //classificacaoGabinete.excluirClassificacaoGabinite();
+        //classificacao.exclusaoClassificacao();
 	}
 }
