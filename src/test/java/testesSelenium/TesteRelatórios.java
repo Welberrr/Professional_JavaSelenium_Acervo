@@ -30,6 +30,10 @@ public class TesteRelatorios {
 		
 		
 		elemento.localizarBotaoEngGab();
+		elemento.getBotaoEngGab().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoGab();
 		elemento.getBotaoGab().click();
 		Thread.sleep(1000);
 		
@@ -55,7 +59,7 @@ public class TesteRelatorios {
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoEdicao();
-		elemento.getAnoEdicao().sendKeys("1000"); //livro.getNumeroEdicao()
+		elemento.getEdicao().sendKeys("1000"); //livro.getNumeroEdicao()
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoVolume();

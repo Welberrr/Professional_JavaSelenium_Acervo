@@ -77,10 +77,10 @@ public class CamposTesteRelatorios {
 	}
 	
 	public void localizarBotaoPesquisar() {
-		botaoPesquisar = driver.findElement(By.xpath("//*[@id=\"pn_id_1332_content\"]/form/p-toolbar/div/div[2]/div/p-button[1]/button/span[1]"));
+		botaoPesquisar = driver.findElement(By.xpath("//*[@id=\"pn_id_7_content\"]/form/p-toolbar/div/div[2]/div/p-button[1]/button"));
 	}
 	
 	public void localizarBotaoXLSX() {
-		botaoXLSX = driver.findElement(By.xpath("//*[@id=\"pn_id_1332_content\"]/form/p-toolbar/div/div[2]/div/button"));
+		botaoXLSX = driver.findElement(By.xpath("//*[@id=\"pn_id_7_content\"]/form/p-toolbar/div/div[2]/div/button/span[2]"));
 	}
 }
