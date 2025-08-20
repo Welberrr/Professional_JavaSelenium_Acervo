@@ -1,5 +1,6 @@
 package testesSelenium;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import br.jus.stf.acervo.model.dto.AutorDto;
@@ -46,9 +47,9 @@ public class TesteRelatorios {
 		elemento.getTitulo().sendKeys("Teste Relatorio"); //livro.getTitulo()
 		Thread.sleep(1000);
 		
-		//elemento.localizarCampoClassificacao();
-		//elemento.getClassificacao().sendKeys("Teste"); //classificacao.getDescricao()
-		//Thread.sleep(1000);
+		elemento.localizarCampoClassificacao();
+		elemento.getClassificacao().sendKeys("Teste"); //classificacao.getDescricao()
+		Thread.sleep(1000);
 		
 		elemento.localizarCampoAutor();
 		elemento.getAutor().sendKeys("C.S Lewis");  //autor.getNome()
@@ -70,9 +71,17 @@ public class TesteRelatorios {
 		elemento.getBotaoPesquisar().click();
 		Thread.sleep(3000);
 		
-		
 		elemento.localizarBotaoXLSX();
 		elemento.getBotaoXLSX().click();
+		Thread.sleep(1000);
+		
+		
+		elemento.localizarBotaoMenuFinal();
+		elemento.getBotaoMenuFinal().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoInicioFinal();
+		elemento.getBotaoInicioFinal().click();
 		Thread.sleep(1000);
 	}
 	
@@ -104,7 +113,20 @@ public class TesteRelatorios {
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoClassSintetico();
-		elemento.getCampoClassSintetico().sendKeys("Teste");
+		elemento.getCampoClassSintetico().sendKeys("Teste", Keys.ENTER);
+		Thread.sleep(3000);
+		
+		elemento.localizarBotaoXLSXSintetico();
+		elemento.getBotaoXLSXSintetico().click();
+		Thread.sleep(1000);
+		
+		
+		elemento.localizarBotaoMenuFinal();
+		elemento.getBotaoMenuFinal().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoInicioFinal();
+		elemento.getBotaoInicioFinal().click();
 		Thread.sleep(1000);
 	}
 }

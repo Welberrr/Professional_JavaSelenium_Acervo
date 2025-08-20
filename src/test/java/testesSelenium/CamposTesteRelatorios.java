@@ -1,95 +1,60 @@
 package testesSelenium;
 
-import java.time.Duration;
-
-import org.openqa.selenium.By;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.chrome.ChromeDriver;
 
-import lombok.Getter;
-import lombok.Setter;
+import br.jus.stf.acervo.model.dto.AutorDto;
+import br.jus.stf.acervo.model.dto.ClassificacaoLivroDto;
+import br.jus.stf.acervo.model.dto.EditoraDto;
+import br.jus.stf.acervo.model.dto.LivroDto;
 
-@Getter
-@Setter
-public class CamposTesteRelatorios {
+public class TestesMain {
 
-	private WebDriver driver;
-	private WebDriverWait wait;
-	
-	WebElement botaoMenuInicio, BotaoRelatorios, botaoEngGab, botaoGab, botaoAlterarGab, titulo, classificacao, autor, anoEdicao, volume, edicao, botaoPesquisar, botaoXLSX, botaoRelatorioSintetico, campoClassSintetico;
-	
-	public CamposTesteRelatorios(WebDriver driver){
-		this.driver = driver;
-		this.wait = new WebDriverWait(driver, Duration.ofSeconds(60));
-	}
-	
-	public WebElement botaoEspera(String xpath) {
-		return wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpath)));
-	}
-	
-	
-	
-	public void localizarBotaoMenuInicio() {
-		botaoMenuInicio = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]"));
-	}
-	
-	public void localizarBotaoRelatorios() {
-		BotaoRelatorios = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[1]/app-sidebar/app-menu/ul/li[3]/ul/li[2]/a"));
-	}
-	
+	@Test
+	public void IniciarTeste() throws InterruptedException {
+		WebDriver driver = new ChromeDriver(); 
+		driver.manage().window().maximize();
+		
+        TesteAutor autor = new TesteAutor(driver);
+        TesteEditora editora = new TesteEditora(driver);
+        TesteLivro livro = new TesteLivro(driver);
+        TesteClassificacaoGeral classificacao = new TesteClassificacaoGeral(driver);
+        TesteClassificacaoGabinete classificacaoGabinete = new TesteClassificacaoGabinete(driver);
+        TesteAcervo acervo = new TesteAcervo(driver);
+        TesteRelatorios relatorios = new TesteRelatorios(driver);
+        
+        driver.get("http://localhost:4200/");
+        
 
-	public void localizarBotaoEngGab() {
-		botaoEngGab = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/app-topbar/div[1]/div/button"));
-	}
-	
-	public void localizarBotaoGab() {
-		botaoGab = driver.findElement(By.xpath("//*[@id=\"pn_id_3_9\"]/span[1]"));
-	}
-	
-	public void localizarBotaoAlterarGab() {
-		botaoAlterarGab = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/app-topbar/div[2]/div/p-dialog/div/div/div[3]/app-configuracao/form/div/div/button/span"));
-	}
-	
-	public void localizarCampoClassificacao() {
-		classificacao = driver.findElement(By.xpath("//*[@id=\"classificacao\"]"));
-	}
-	
-	public void localizarCampoTitulo() {
-		titulo = driver.findElement(By.xpath("//*[@id=\"titulo\"]"));
-	}
-	
-	public void localizarCampoAutor() {
-		autor = driver.findElement(By.xpath("//*[@id=\"autor\"]"));
-	}
-	
-	public void localizarCampoAnoEdicao() {
-		anoEdicao = driver.findElement(By.xpath("//*[@id=\"anoEdicao\"]"));
-	}
-	
-	public void localizarCampoEdicao() {
-		edicao = driver.findElement(By.xpath("//*[@id=\"numeroEdicao\"]"));
-	}
-	
-	public void localizarCampoVolume() {
-		volume = driver.findElement(By.xpath("//*[@id=\"volume\"]"));
-	}
-	
-	public void localizarBotaoPesquisar() {
-		botaoPesquisar = driver.findElement(By.xpath("//*[@id=\"pn_id_7_content\"]/form/p-toolbar/div/div[2]/div/p-button[1]/button"));
-	}
-	
-	public void localizarBotaoXLSX() {
-		botaoXLSX = driver.findElement(By.xpath("//*[@id=\"pn_id_7_content\"]/form/p-toolbar/div/div[2]/div/button/span[2]"));
-	}
-	
-	
-	public void localizarBotaoRelatorioSintetico() {
-		botaoRelatorioSintetico = driver.findElement(By.xpath("//*[@id=\"pn_id_9_header_action\"]"));
-	}
-	
-	public void localizarCampoClassSintetico() {
-		campoClassSintetico = driver.findElement(By.xpath("//*[@id=\"classificacao\"]"));
+        //autor.cadastroAutor();
+        //AutorDto autorDto = autor.editarAutor();
+        
+        //editora.cadastrarEditora();
+        //EditoraDto editoraDto = editora.editarEditora();
+       
+        //classificacao.cadastroClassificacao();
+        //ClassificacaoLivroDto classificacaoDto = classificacao.editarClassificacao();
+        
+        //classificacaoGabinete.cadastrarClassificacaoGabinete();
+        //classificacaoGabinete.editarClassificacaoGabinete();
+        
+       
+        //livro.CadastrarLivro(editoraDto, autorDto, classificacaoDto);
+        //livro.VincularLivro(autorDto);
+        //LivroDto livroDto = livro.EditarLivro(editoraDto);
+        
+        //acervo.cadastrarAcervo(livroDto, autorDto, classificacaoDto);
+        //acervo.editarAcervo(livroDto, autorDto, classificacaoDto);
+        
+        relatorios.gerarRelatorioLivro(); //livroDto, autorDto, classificacaoDto
+        relatorios.gerarRelatorioSintetico();
+        
+        //acervo.excluirAcervo(livroDto, autorDto, classificacaoDto);
+        //livro.ExcluirLivro();
+        //editora.excluirEditora();
+        //autor.exclusaoAutor();
+        //classificacaoGabinete.excluirClassificacaoGabinite();
+        //classificacao.exclusaoClassificacao();
 	}
 }
