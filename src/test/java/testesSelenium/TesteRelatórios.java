@@ -1,11 +1,16 @@
 package testesSelenium;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class TesteRelatorios {
 
@@ -86,85 +91,87 @@ public class TesteRelatorios {
 	}
 	
 	public void gerarRelatorioSintetico() throws InterruptedException {
-		// 1️⃣ Navegação pelos menus
+		elemento.botaoMenuInicio = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenuInicio().click();
 		Thread.sleep(1000);
-
+		
 		elemento.localizarBotaoRelatorios();
 		elemento.getBotaoRelatorios().click();
 		Thread.sleep(1000);
-
+		
+		
 		elemento.localizarBotaoEngGab();
 		elemento.getBotaoEngGab().click();
 		Thread.sleep(1000);
-
+		
 		elemento.localizarBotaoGab();
 		elemento.getBotaoGab().click();
 		Thread.sleep(1000);
-
+		
 		elemento.localizarBotaoAlterarGab();
 		elemento.getBotaoAlterarGab().click();
 		Thread.sleep(1000);
 
-		// 1️⃣ Clica na aba "Relatório Sintético"
-		elemento.localizarBotaoRelatorioSintetico();
-		elemento.getBotaoRelatorioSintetico().click();
-		Thread.sleep(1000); // mantém a sua estratégia de sleep
 
-		// 2️⃣ Localiza o input dinamicamente
-		WebElement campo = null;
-		int tentativas = 0;
-		while (tentativas < 10) {
-		    try {
-		        campo = driver.findElement(By.id("classificacao"));
-		        if (campo.isDisplayed() && campo.getSize().getHeight() > 0 && campo.getSize().getWidth() > 0) {
-		            break;
-		        }
-		    } catch (Exception e) {
-		        // ignora
-		    }
-		    Thread.sleep(500);
-		    tentativas++;
-		}
+	    elemento.localizarBotaoRelatorioSintetico();
+	    elemento.getBotaoRelatorioSintetico().click();
 
-		if (campo == null) {
-		    throw new RuntimeException("Campo 'classificacao' não encontrado ou não interagível!");
-		}
+	   
+	    
+	    
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-		// 3️⃣ Rola para o campo ficar visível
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", campo);
-		Thread.sleep(200);
+	    try {
+	        // Aguarda até que o painel "Relatório Sintético" esteja ativo
+	        wait.until(ExpectedConditions.attributeContains(
+	            By.xpath("//span[text()='Relatório Sintético']/ancestor::li"),
+	            "class",
+	            "p-highlight"
+	        ));
 
-		// 4️⃣ Digita "teste" e dispara os eventos Angular
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript(
-		    "arguments[0].value = 'teste';" +
-		    "arguments[0].dispatchEvent(new Event('input', { bubbles: true }));" +
-		    "arguments[0].dispatchEvent(new Event('change', { bubbles: true }));",
-		    campo
-		);
+	        // Localiza o campo SOMENTE no painel visível
+	        WebElement campo = wait.until(ExpectedConditions
+	            .visibilityOfElementLocated(By.xpath(
+	                "//div[@id='pn_id_29_content' and @aria-hidden='false']//input[@id='classificacao']"
+	            ))
+	        );
 
-		// 5️⃣ Pressiona Enter para pesquisar
-		Actions actions = new Actions(driver);
-		actions.moveToElement(campo).click().sendKeys(Keys.ENTER).perform();
-		Thread.sleep(500);
+	        // Define valor via JavaScript para evitar problemas de foco
+	        ((JavascriptExecutor) driver).executeScript("arguments[0].value='teste';", campo);
+
+	        // Envia ENTER após preencher
+	        campo.sendKeys(Keys.ENTER);
+
+	        Thread.sleep(1000);
+
+	    } catch (ElementNotInteractableException | StaleElementReferenceException e) {
+	        // Re-localiza novamente caso o elemento seja recriado
+	        WebElement campo = wait.until(ExpectedConditions
+	            .visibilityOfElementLocated(By.xpath(
+	                "//div[@id='pn_id_29_content' and @aria-hidden='false']//input[@id='classificacao']"
+	            ))
+	        );
+	        ((JavascriptExecutor) driver).executeScript("arguments[0].value='teste';", campo);
+	        campo.sendKeys(Keys.ENTER);
+	    }
+
+
+
+	    
+	    
 		
-		
-
-		// 5️⃣ Clica no botão XLSX do relatório sintetico
 		elemento.localizarBotaoXLSXSintetico();
 		elemento.getBotaoXLSXSintetico().click();
 		Thread.sleep(1000);
-
-		// 6️⃣ Fecha menus e retorna para a tela inicial
+		
+		
 		elemento.localizarBotaoMenuFinal();
 		elemento.getBotaoMenuFinal().click();
 		Thread.sleep(1000);
-
+		
 		elemento.localizarBotaoInicioFinal();
 		elemento.getBotaoInicioFinal().click();
 		Thread.sleep(1000);
-
 	}
 	
 	public void gerarEtiquetas() {
