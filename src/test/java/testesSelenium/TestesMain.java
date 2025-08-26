@@ -48,7 +48,8 @@ public class TestesMain {
         //acervo.editarAcervo(livroDto, autorDto, classificacaoDto);
         
         relatorios.gerarRelatorioLivro(); //livroDto, autorDto, classificacaoDto
-        relatorios.gerarRelatorioSintetico();
+        relatorios.gerarRelatorioSintetico(); //classificacaoDto
+        relatorios.gerarEtiquetas(); //livroDto, autorDto, classificacaoDto
         
         //acervo.excluirAcervo(livroDto, autorDto, classificacaoDto);
         //livro.ExcluirLivro();

@@ -115,50 +115,11 @@ public class TesteRelatorios {
 
 	    elemento.localizarBotaoRelatorioSintetico();
 	    elemento.getBotaoRelatorioSintetico().click();
+	    Thread.sleep(1000);
 
-	   
-	    
-	    
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
-	    try {
-	        // Aguarda até que o painel "Relatório Sintético" esteja ativo
-	        wait.until(ExpectedConditions.attributeContains(
-	            By.xpath("//span[text()='Relatório Sintético']/ancestor::li"),
-	            "class",
-	            "p-highlight"
-	        ));
-
-	        // Localiza o campo SOMENTE no painel visível
-	        WebElement campo = wait.until(ExpectedConditions
-	            .visibilityOfElementLocated(By.xpath(
-	                "//div[@id='pn_id_29_content' and @aria-hidden='false']//input[@id='classificacao']"
-	            ))
-	        );
-
-	        // Define valor via JavaScript para evitar problemas de foco
-	        ((JavascriptExecutor) driver).executeScript("arguments[0].value='teste';", campo);
-
-	        // Envia ENTER após preencher
-	        campo.sendKeys(Keys.ENTER);
-
-	        Thread.sleep(1000);
-
-	    } catch (ElementNotInteractableException | StaleElementReferenceException e) {
-	        // Re-localiza novamente caso o elemento seja recriado
-	        WebElement campo = wait.until(ExpectedConditions
-	            .visibilityOfElementLocated(By.xpath(
-	                "//div[@id='pn_id_29_content' and @aria-hidden='false']//input[@id='classificacao']"
-	            ))
-	        );
-	        ((JavascriptExecutor) driver).executeScript("arguments[0].value='teste';", campo);
-	        campo.sendKeys(Keys.ENTER);
-	    }
-
-
-
-	    
-	    
+	    elemento.localizarCampoClassSintetico();
+	    elemento.getCampoClassSintetico().sendKeys("Teste", Keys.ENTER);
+	    Thread.sleep(1000);
 		
 		elemento.localizarBotaoXLSXSintetico();
 		elemento.getBotaoXLSXSintetico().click();
@@ -174,7 +135,73 @@ public class TesteRelatorios {
 		Thread.sleep(1000);
 	}
 	
-	public void gerarEtiquetas() {
+	public void gerarEtiquetas() throws InterruptedException {
+		elemento.botaoMenuInicio = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
+		elemento.getBotaoMenuInicio().click();
+		Thread.sleep(1000);
 		
+		elemento.localizarBotaoRelatorios();
+		elemento.getBotaoRelatorios().click();
+		Thread.sleep(1000);
+		
+		
+		elemento.localizarBotaoEngGab();
+		elemento.getBotaoEngGab().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoGab();
+		elemento.getBotaoGab().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoAlterarGab();
+		elemento.getBotaoAlterarGab().click();
+		Thread.sleep(1000);
+		
+		
+		elemento.localizarBotaoEtiquetas();
+		elemento.getBotaoGerarEtiquetas().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarCampoClassEtiquetas();
+		elemento.getCampoClassEtiqueta().sendKeys("Teste", Keys.ENTER);
+		Thread.sleep(1000);
+		
+		elemento.localizarCampoAutorEtiquetas();
+		elemento.getCampoAutorEtiqueta().sendKeys("Teste", Keys.ENTER);
+		Thread.sleep(1000);
+		
+		//elemento.localizarOrdenacaoEtiqueta();
+		//elemento.getBotaoOrdenacaoEtiqueta().click();
+		//elemento.getBotaoAutorOrdenacao().click();
+		//Thread.sleep(1000);
+		
+		elemento.localizarCampoVolumeEtiqueta();
+		elemento.getCampoVolumeEtiqueta().sendKeys("Teste", Keys.ENTER);
+		Thread.sleep(1000);
+		
+		elemento.localizarCampoTituloEtiqueta();
+		elemento.getCampoTituloEtiqueta().sendKeys("Teste", Keys.ENTER);
+		Thread.sleep(1000);
+		
+		elemento.localizarCampoAssuntoEtiqueta();
+		elemento.getCampoAssuntoEtiqueta().sendKeys("Teste", Keys.ENTER);
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoPesquisarEtiquetas();
+		elemento.getBotaoPesquisarEtiquetas().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoGerarEtiquetasDownload();
+		elemento.getBotaoGerarEtiquetasDownload().click();
+		Thread.sleep(1000);
+		
+		
+		elemento.localizarBotaoMenuFinal();
+		elemento.getBotaoMenuFinal().click();
+		Thread.sleep(1000);
+		
+		elemento.localizarBotaoInicioFinal();
+		elemento.getBotaoInicioFinal().click();
+		Thread.sleep(1000);
 	}
 }
