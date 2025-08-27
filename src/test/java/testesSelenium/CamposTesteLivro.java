@@ -65,7 +65,7 @@ public class CamposTesteLivro {
 	}
 	
 	public void localizarBotaoEdit() {
-		botaoEditLivro = driver.findElement(By.xpath("//*[@id=\"pn_id_509-table\"]/tbody/tr/td[9]/div[1]"));
+		botaoEditLivro = driver.findElement(By.xpath("//*[@id=\"pn_id_513-table\"]/tbody/tr/td[9]/div[1]"));
 	}
 	
 	public void localizarBotaoVincularAutor() {
@@ -77,7 +77,7 @@ public class CamposTesteLivro {
 	}
 	
 	public void localizarBotaoAutor() {
-		botaoAutor = driver.findElement(By.xpath("//*[@id=\"pn_id_542_content\"]/div/div/div[1]/input"));
+		botaoAutor = driver.findElement(By.xpath("//*[@id=\"pn_id_546_content\"]/div/div/div[1]/input"));
 	}
 	
 	public void localizarBotaoGravarVinculo() {

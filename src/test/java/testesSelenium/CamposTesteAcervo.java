@@ -71,7 +71,7 @@ public class CamposTesteAcervo {
 	}
 	
 	public void localizarBotaoSelectLivro() {
-		botaoSelectLivro = driver.findElement(By.xpath("//*[@id=\"pn_id_652-table\"]/tbody/tr/td[1]/p-tableradiobutton/div/div[2]"));
+		botaoSelectLivro = driver.findElement(By.xpath("//*[@id=\"pn_id_723-table\"]/tbody/tr/td[1]/p-tableradiobutton/div/div[2]"));
 	}
 	
 	public void localizarBotaoSelecionarLivro() {

@@ -75,7 +75,7 @@ public class CamposTesteClassificacaoGabinete {
 	}
 	
 	public void localizarBotaoEdit() {
-		botaoEdit = driver.findElement(By.xpath("//*[@id=\"pn_id_399-table\"]/tbody/tr/td[4]/div[1]"));
+		botaoEdit = driver.findElement(By.xpath("//*[@id=\"pn_id_401-table\"]/tbody/tr/td[4]/div[1]"));
 	}
 	
 	public void localizarCampoEdicao() {
