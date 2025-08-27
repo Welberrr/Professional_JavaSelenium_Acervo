@@ -1,16 +1,11 @@
 package testesSelenium;
 
-import java.time.Duration;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementNotInteractableException;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
+import br.jus.stf.acervo.model.dto.AutorDto;
+import br.jus.stf.acervo.model.dto.ClassificacaoLivroDto;
+import br.jus.stf.acervo.model.dto.LivroDto;
 
 public class TesteRelatorios {
 
@@ -24,8 +19,8 @@ public class TesteRelatorios {
     }
 	
 	
-	//LivroDto livro, AutorDto autor, ClassificacaoLivroDto classificacao
-	public void gerarRelatorioLivro() throws InterruptedException {
+	
+	public void gerarRelatorioLivro(LivroDto livro, AutorDto autor, ClassificacaoLivroDto classificacao) throws InterruptedException {
 		elemento.botaoMenuInicio = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenuInicio().click();
 		Thread.sleep(1000);
@@ -49,27 +44,27 @@ public class TesteRelatorios {
 		
 		
 		elemento.localizarCampoTitulo();
-		elemento.getTitulo().sendKeys("Teste Relatorio"); //livro.getTitulo()
+		elemento.getTitulo().sendKeys(livro.getTitulo());
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoClassificacao();
-		elemento.getClassificacao().sendKeys("Teste"); //classificacao.getDescricao()
+		elemento.getClassificacao().sendKeys(classificacao.getDescricao()); 
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoAutor();
-		elemento.getAutor().sendKeys("C.S Lewis");  //autor.getNome()
+		elemento.getAutor().sendKeys(autor.getNome());
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoAnoEdicao();
-		elemento.getAnoEdicao().sendKeys("2025");  //String.valueOf(livro.getAnoEdicao())
+		elemento.getAnoEdicao().sendKeys(String.valueOf(livro.getAnoEdicao()));
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoEdicao();
-		elemento.getEdicao().sendKeys("1000"); //livro.getNumeroEdicao()
+		elemento.getEdicao().sendKeys(livro.getNumeroEdicao());
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoVolume();
-		elemento.getVolume().sendKeys("1000"); //String.valueOf(livro.getNumeroVolume())
+		elemento.getVolume().sendKeys(String.valueOf(livro.getNumeroVolume()));
 		Thread.sleep(1000);
 		
 		elemento.localizarBotaoPesquisar();
@@ -90,7 +85,7 @@ public class TesteRelatorios {
 		Thread.sleep(1000);
 	}
 	
-	public void gerarRelatorioSintetico() throws InterruptedException {
+	public void gerarRelatorioSintetico(ClassificacaoLivroDto classificacao) throws InterruptedException {
 		elemento.botaoMenuInicio = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenuInicio().click();
 		Thread.sleep(1000);
@@ -118,7 +113,7 @@ public class TesteRelatorios {
 	    Thread.sleep(1000);
 
 	    elemento.localizarCampoClassSintetico();
-	    elemento.getCampoClassSintetico().sendKeys("Teste", Keys.ENTER);
+	    elemento.getCampoClassSintetico().sendKeys(classificacao.getDescricao(), Keys.ENTER);
 	    Thread.sleep(1000);
 		
 		elemento.localizarBotaoXLSXSintetico();
@@ -135,7 +130,7 @@ public class TesteRelatorios {
 		Thread.sleep(1000);
 	}
 	
-	public void gerarEtiquetas() throws InterruptedException {
+	public void gerarEtiquetas(LivroDto livro, AutorDto autor, ClassificacaoLivroDto classificacao) throws InterruptedException {
 		elemento.botaoMenuInicio = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenuInicio().click();
 		Thread.sleep(1000);
@@ -163,11 +158,11 @@ public class TesteRelatorios {
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoClassEtiquetas();
-		elemento.getCampoClassEtiqueta().sendKeys("Teste", Keys.ENTER);
+		elemento.getCampoClassEtiqueta().sendKeys(classificacao.getDescricao(), Keys.ENTER);
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoAutorEtiquetas();
-		elemento.getCampoAutorEtiqueta().sendKeys("Teste", Keys.ENTER);
+		elemento.getCampoAutorEtiqueta().sendKeys(autor.getNome(), Keys.ENTER);
 		Thread.sleep(1000);
 		
 		//elemento.localizarOrdenacaoEtiqueta();
@@ -176,15 +171,15 @@ public class TesteRelatorios {
 		//Thread.sleep(1000);
 		
 		elemento.localizarCampoVolumeEtiqueta();
-		elemento.getCampoVolumeEtiqueta().sendKeys("Teste", Keys.ENTER);
+		elemento.getCampoVolumeEtiqueta().sendKeys(livro.getVolume(), Keys.ENTER);
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoTituloEtiqueta();
-		elemento.getCampoTituloEtiqueta().sendKeys("Teste", Keys.ENTER);
+		elemento.getCampoTituloEtiqueta().sendKeys(livro.getTitulo(), Keys.ENTER);
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoAssuntoEtiqueta();
-		elemento.getCampoAssuntoEtiqueta().sendKeys("Teste", Keys.ENTER);
+		elemento.getCampoAssuntoEtiqueta().sendKeys(livro.getAssunto(), Keys.ENTER);
 		Thread.sleep(1000);
 		
 		elemento.localizarBotaoPesquisarEtiquetas();
