@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import br.jus.stf.acervo.model.dto.AutorDto;
 import br.jus.stf.acervo.model.dto.ClassificacaoLivroDto;
+import br.jus.stf.acervo.model.dto.ClassificacaoSetorDto;
 import br.jus.stf.acervo.model.dto.EditoraDto;
 import br.jus.stf.acervo.model.dto.LivroDto;
 
@@ -37,7 +38,7 @@ public class TestesMain {
         ClassificacaoLivroDto classificacaoDto = classificacao.editarClassificacao();
         
         classificacaoGabinete.cadastrarClassificacaoGabinete();
-        classificacaoGabinete.editarClassificacaoGabinete();
+        ClassificacaoSetorDto classGabDto = classificacaoGabinete.editarClassificacaoGabinete();
         
        
         livro.CadastrarLivro(editoraDto, autorDto, classificacaoDto);
@@ -48,7 +49,7 @@ public class TestesMain {
         acervo.editarAcervo(livroDto, autorDto, classificacaoDto);
         
         relatorios.gerarRelatorioLivro(livroDto, autorDto, classificacaoDto); 
-        relatorios.gerarRelatorioSintetico(classificacaoDto); 
+        relatorios.gerarRelatorioSintetico(classGabDto); 
         relatorios.gerarEtiquetas(livroDto, autorDto, classificacaoDto);
         
         acervo.excluirAcervo(livroDto, autorDto, classificacaoDto);

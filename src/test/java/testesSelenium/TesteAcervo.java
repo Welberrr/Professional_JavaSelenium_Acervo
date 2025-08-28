@@ -162,6 +162,12 @@ public class TesteAcervo {
 		elemento.getCampoObservacao().sendKeys("Observacao Editado");
 		Thread.sleep(1000);
 		
+		elemento.localizarCampoClassGab();
+		elemento.getCampoClassGab().sendKeys(classificacao.getDescricao());
+		Thread.sleep(1000);
+		elemento.getCampoClassGab().sendKeys(Keys.ENTER);
+		Thread.sleep(1000);
+		
 		elemento.localizarBotaoAlterarEdit();
 		elemento.getBotaoAlterarEdit().click();
 		Thread.sleep(1000);

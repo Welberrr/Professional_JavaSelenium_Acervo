@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import br.jus.stf.acervo.model.dto.AutorDto;
 import br.jus.stf.acervo.model.dto.ClassificacaoLivroDto;
+import br.jus.stf.acervo.model.dto.ClassificacaoSetorDto;
 import br.jus.stf.acervo.model.dto.LivroDto;
 
 public class TesteRelatorios {
@@ -63,9 +64,9 @@ public class TesteRelatorios {
 		elemento.getEdicao().sendKeys(livro.getNumeroEdicao());
 		Thread.sleep(1000);
 		
-		elemento.localizarCampoVolume();
-		elemento.getVolume().sendKeys(String.valueOf(livro.getNumeroVolume()));
-		Thread.sleep(1000);
+		//elemento.localizarCampoVolume();
+		//elemento.getVolume().sendKeys(String.valueOf(livro.getNumeroVolume()));
+		//Thread.sleep(1000);
 		
 		elemento.localizarBotaoPesquisar();
 		elemento.getBotaoPesquisar().click();
@@ -85,7 +86,7 @@ public class TesteRelatorios {
 		Thread.sleep(1000);
 	}
 	
-	public void gerarRelatorioSintetico(ClassificacaoLivroDto classificacao) throws InterruptedException {
+	public void gerarRelatorioSintetico(ClassificacaoSetorDto classificacaoGab) throws InterruptedException {
 		elemento.botaoMenuInicio = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenuInicio().click();
 		Thread.sleep(1000);
@@ -113,7 +114,7 @@ public class TesteRelatorios {
 	    Thread.sleep(1000);
 
 	    elemento.localizarCampoClassSintetico();
-	    elemento.getCampoClassSintetico().sendKeys(classificacao.getDescricao(), Keys.ENTER);
+	    elemento.getCampoClassSintetico().sendKeys(classificacaoGab.getDescricao(), Keys.ENTER);
 	    Thread.sleep(1000);
 		
 		elemento.localizarBotaoXLSXSintetico();

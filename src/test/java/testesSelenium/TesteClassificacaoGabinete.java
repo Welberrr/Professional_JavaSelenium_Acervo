@@ -66,7 +66,7 @@ public class TesteClassificacaoGabinete {
 		Thread.sleep(1000);
 	}
 	
-	public void editarClassificacaoGabinete() throws InterruptedException {
+	public ClassificacaoSetorDto editarClassificacaoGabinete() throws InterruptedException {
 		elemento.botaoMenu = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenu().click();
 		Thread.sleep(1000);
@@ -104,6 +104,8 @@ public class TesteClassificacaoGabinete {
 		elemento.localizarBotaoInicio();
 		elemento.getBotaoInicio().click();
 		Thread.sleep(1000);
+		
+		return classificacaoGab;
 	}
 	
 	public void excluirClassificacaoGabinite() throws InterruptedException {
