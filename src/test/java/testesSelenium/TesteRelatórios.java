@@ -4,7 +4,6 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import br.jus.stf.acervo.model.dto.AutorDto;
-import br.jus.stf.acervo.model.dto.ClassificacaoLivroDto;
 import br.jus.stf.acervo.model.dto.ClassificacaoSetorDto;
 import br.jus.stf.acervo.model.dto.LivroDto;
 
@@ -21,7 +20,7 @@ public class TesteRelatorios {
 	
 	
 	
-	public void gerarRelatorioLivro(LivroDto livro, AutorDto autor, ClassificacaoLivroDto classificacao) throws InterruptedException {
+	public void gerarRelatorioLivro(LivroDto livro, AutorDto autor, ClassificacaoSetorDto classificacaoGab) throws InterruptedException {
 		elemento.botaoMenuInicio = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenuInicio().click();
 		Thread.sleep(1000);
@@ -49,7 +48,7 @@ public class TesteRelatorios {
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoClassificacao();
-		elemento.getClassificacao().sendKeys(classificacao.getDescricao()); 
+		elemento.getClassificacao().sendKeys(classificacaoGab.getDescricao()); 
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoAutor();
@@ -131,7 +130,7 @@ public class TesteRelatorios {
 		Thread.sleep(1000);
 	}
 	
-	public void gerarEtiquetas(LivroDto livro, AutorDto autor, ClassificacaoLivroDto classificacao) throws InterruptedException {
+	public void gerarEtiquetas(LivroDto livro, AutorDto autor, ClassificacaoSetorDto classificacaoGab) throws InterruptedException {
 		elemento.botaoMenuInicio = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenuInicio().click();
 		Thread.sleep(1000);
@@ -159,7 +158,7 @@ public class TesteRelatorios {
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoClassEtiquetas();
-		elemento.getCampoClassEtiqueta().sendKeys(classificacao.getDescricao(), Keys.ENTER);
+		elemento.getCampoClassEtiqueta().sendKeys(classificacaoGab.getDescricao(), Keys.ENTER);
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoAutorEtiquetas();
@@ -171,9 +170,9 @@ public class TesteRelatorios {
 		//elemento.getBotaoAutorOrdenacao().click();
 		//Thread.sleep(1000);
 		
-		elemento.localizarCampoVolumeEtiqueta();
-		elemento.getCampoVolumeEtiqueta().sendKeys(livro.getVolume(), Keys.ENTER);
-		Thread.sleep(1000);
+		//elemento.localizarCampoVolumeEtiqueta();
+		//elemento.getCampoVolumeEtiqueta().sendKeys(livro.getVolume(), Keys.ENTER);
+		//Thread.sleep(1000);
 		
 		elemento.localizarCampoTituloEtiqueta();
 		elemento.getCampoTituloEtiqueta().sendKeys(livro.getTitulo(), Keys.ENTER);

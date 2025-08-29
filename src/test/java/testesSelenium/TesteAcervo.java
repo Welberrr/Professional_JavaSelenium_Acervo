@@ -7,8 +7,10 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import br.jus.stf.acervo.model.dto.AutorDto;
 import br.jus.stf.acervo.model.dto.ClassificacaoLivroDto;
+import br.jus.stf.acervo.model.dto.ClassificacaoSetorDto;
 import br.jus.stf.acervo.model.dto.LivroDto;
 
 public class TesteAcervo {
@@ -23,7 +25,7 @@ public class TesteAcervo {
     }
 	
 	
-	public void cadastrarAcervo(LivroDto livro, AutorDto autor, ClassificacaoLivroDto classificacao) throws InterruptedException {
+	public void cadastrarAcervo(LivroDto livro, AutorDto autor, ClassificacaoSetorDto classGabDto) throws InterruptedException {
 		elemento.botaoMenuInicio = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenuInicio().click();
 		Thread.sleep(1000);
@@ -86,7 +88,7 @@ public class TesteAcervo {
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoClassGab();
-		elemento.getCampoClassGab().sendKeys(classificacao.getDescricao());
+		elemento.getCampoClassGab().sendKeys(classGabDto.getDescricao());
 		Thread.sleep(1000);
 		elemento.getCampoClassGab().sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
@@ -108,7 +110,7 @@ public class TesteAcervo {
 		elemento.getBotaoInicio().click();
 	}
 	
-	public void editarAcervo(LivroDto livro, AutorDto autor, ClassificacaoLivroDto classificacao) throws InterruptedException {
+	public void editarAcervo(LivroDto livro, AutorDto autor, ClassificacaoSetorDto classGabDto) throws InterruptedException {
 		elemento.botaoMenuInicio = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenuInicio().click();
 		Thread.sleep(1000);
@@ -163,7 +165,8 @@ public class TesteAcervo {
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoClassGab();
-		elemento.getCampoClassGab().sendKeys(classificacao.getDescricao());
+		elemento.getCampoClassGab().clear();
+		elemento.getCampoClassGab().sendKeys(classGabDto.getDescricao());
 		Thread.sleep(1000);
 		elemento.getCampoClassGab().sendKeys(Keys.ENTER);
 		Thread.sleep(1000);
@@ -181,7 +184,7 @@ public class TesteAcervo {
 		elemento.getBotaoInicio().click();
 	}
 	
-	public void excluirAcervo(LivroDto livro, AutorDto autor, ClassificacaoLivroDto classificacao) throws InterruptedException {
+	public void excluirAcervo(LivroDto livro, AutorDto autor) throws InterruptedException {
 		elemento.botaoMenuInicio = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenuInicio().click();
 		Thread.sleep(1000);

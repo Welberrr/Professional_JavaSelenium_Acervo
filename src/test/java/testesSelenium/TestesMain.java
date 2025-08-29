@@ -45,14 +45,14 @@ public class TestesMain {
         livro.VincularLivro(autorDto);
         LivroDto livroDto = livro.EditarLivro(editoraDto);
         
-        acervo.cadastrarAcervo(livroDto, autorDto, classificacaoDto);
-        acervo.editarAcervo(livroDto, autorDto, classificacaoDto);
+        acervo.cadastrarAcervo(livroDto, autorDto, classGabDto);
+        acervo.editarAcervo(livroDto, autorDto, classGabDto);
         
-        relatorios.gerarRelatorioLivro(livroDto, autorDto, classificacaoDto); 
+        relatorios.gerarRelatorioLivro(livroDto, autorDto, classGabDto); 
         relatorios.gerarRelatorioSintetico(classGabDto); 
-        relatorios.gerarEtiquetas(livroDto, autorDto, classificacaoDto);
+        relatorios.gerarEtiquetas(livroDto, autorDto, classGabDto);
         
-        acervo.excluirAcervo(livroDto, autorDto, classificacaoDto);
+        acervo.excluirAcervo(livroDto, autorDto);
         livro.ExcluirLivro();
         editora.excluirEditora();
         autor.exclusaoAutor();
