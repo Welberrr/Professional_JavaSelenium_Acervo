@@ -119,7 +119,7 @@ public class CamposTesteAcervo {
 	}
 	
 	public void localizarBotaoExclusao() {
-		botaoExclusao = driver.findElement(By.xpath("//*[@id=\"pn_id_728-table\"]/tbody/tr/td[6]/div[2]"));
+		botaoExclusao = driver.findElement(By.xpath("//*[@id=\"pn_id_811-table\"]/tbody/tr/td[6]/div[2]"));
 	}
 	
 	
