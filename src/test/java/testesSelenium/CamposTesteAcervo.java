@@ -19,7 +19,7 @@ public class CamposTesteAcervo {
 	private WebDriver driver;
 	private WebDriverWait wait;
 	
-    WebElement botaoMenuInicio, botaoAcervo, botaoEngGabinete, botaoGabinete, botaoAlterar, botaoNovoAcervo, botaoSeleLivro, campoLivroTitulo, campoLivroAutor, campoLivroAno, botaoSelectLivro, botaoSelecionarLivro, campoEmprestado, campoNota, campoObservacao, campoClassGab, botaoGravar, botaoMenuFinal, botaoInicio, botaoPesquisar, botaoEdicao, botaoAlterarEdit, botaoExclusao, campoTituloCons, campoAutorCons, botaoPesquisarCons;
+    WebElement botaoMenuInicio, botaoAcervo, botaoEngGabinete, botaoGabinete, botaoAlterar, botaoNovoAcervo, botaoSeleLivro, campoLivroTitulo, campoLivroAutor, campoLivroAno, botaoSelectLivro, botaoSelecionarLivro, campoEmprestado, campoNota, campoObservacao, campoClassGab, botaoGravar, botaoMenuFinal, botaoInicio, botaoPesquisar, botaoEdicao, botaoAlterarEdit, botaoExclusao, campoTituloCons, campoAutorCons, botaoPesquisarCons, botaoConfirExclusao;
 	
 	public CamposTesteAcervo(WebDriver driver) {
         this.driver = driver;
@@ -122,6 +122,9 @@ public class CamposTesteAcervo {
 		botaoExclusao = driver.findElement(By.xpath("//*[@id=\"pn_id_811-table\"]/tbody/tr/td[6]/div[2]"));
 	}
 	
+	public void localizarConfirExclusao() {
+		botaoConfirExclusao = driver.findElement(By.xpath("/html/body/app-root/app-layout/div/div[2]/div/ng-component/p-confirmdialog/div/div/div[3]/button[2]"));
+	}
 	
 	public void localizarCampoTituloCons() {
 		campoTituloCons = driver.findElement(By.xpath("//*[@id=\"titulo\"]"));

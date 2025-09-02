@@ -221,20 +221,12 @@ public class TesteAcervo {
 		
 		elemento.localizarBotaoExclusao();
 		elemento.getBotaoExclusao().click();
+		Thread.sleep(2000);
+		
+		elemento.localizarConfirExclusao();
+		elemento.getBotaoConfirExclusao().click();
 		Thread.sleep(1000);
 		
-	
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.alertIsPresent());
-
-		while (true) {
-		    try {
-		        driver.switchTo().alert();
-		        Thread.sleep(500);
-		    } catch (NoAlertPresentException e) {
-		        break;
-		    }
-		}
 		
 		elemento.localizarBotaoMenuFinal();
 		elemento.getBotaoMenuFinal().click();
