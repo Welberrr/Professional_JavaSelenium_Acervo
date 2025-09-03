@@ -98,15 +98,15 @@ public class CamposTesteRelatorios {
 	}
 
 	public void localizarBotaoEtiquetas() {
-	    botaoGerarEtiquetas = driver.findElement(By.xpath("//*[@id=\"pn_id_735_header_action\"]"));
+	    botaoGerarEtiquetas = driver.findElement(By.xpath("//*[@id=\"pn_id_778_header_action\"]"));
 	}
 
 	public void localizarCampoClassEtiquetas() {
-	    campoClassEtiqueta = driver.findElement(By.xpath("//div[@id='pn_id_735_content' and @aria-hidden='false']//input[@id='classificacao']"));
+	    campoClassEtiqueta = driver.findElement(By.xpath("//div[@id='pn_id_778_content' and @aria-hidden='false']//input[@id='classificacao']"));
 	}
 
 	public void localizarCampoAutorEtiquetas() {
-	    campoAutorEtiqueta = driver.findElement(By.xpath("//div[@id='pn_id_735_content' and @aria-hidden='false']//input[@id='autor']"));
+	    campoAutorEtiqueta = driver.findElement(By.xpath("//div[@id='pn_id_778_content' and @aria-hidden='false']//input[@id='autor']"));
 	}
 
 	public void localizarOrdenacaoEtiqueta() {
@@ -115,23 +115,23 @@ public class CamposTesteRelatorios {
 	}
 
 	public void localizarCampoVolumeEtiqueta() {
-	    campoVolumeEtiqueta = driver.findElement(By.xpath("//div[@id='pn_id_735_content' and @aria-hidden='false']//input[@id='volume']"));
+	    campoVolumeEtiqueta = driver.findElement(By.xpath("//div[@id='pn_id_778_content' and @aria-hidden='false']//input[@id='volume']"));
 	}
 
 	public void localizarCampoTituloEtiqueta() {
-	    campoTituloEtiqueta = driver.findElement(By.xpath("//div[@id='pn_id_735_content' and @aria-hidden='false']//input[@id='titulo']"));
+	    campoTituloEtiqueta = driver.findElement(By.xpath("//div[@id='pn_id_778_content' and @aria-hidden='false']//input[@id='titulo']"));
 	}
 
 	public void localizarCampoAssuntoEtiqueta() {
-	    campoAssuntoEtiqueta = driver.findElement(By.xpath("//div[@id='pn_id_735_content' and @aria-hidden='false']//input[@id='assunto']"));
+	    campoAssuntoEtiqueta = driver.findElement(By.xpath("//div[@id='pn_id_778_content' and @aria-hidden='false']//input[@id='assunto']"));
 	}
 
 	public void localizarBotaoPesquisarEtiquetas() {
-	    botaoPesquisarEtiquetas = driver.findElement(By.xpath("//div[@id='pn_id_735_content' and @aria-hidden='false']//form/p-toolbar/div/div[2]/div/p-button[1]/button"));
+	    botaoPesquisarEtiquetas = driver.findElement(By.xpath("//div[@id='pn_id_778_content' and @aria-hidden='false']//form/p-toolbar/div/div[2]/div/p-button[1]/button"));
 	}
 
 	public void localizarBotaoGerarEtiquetasDownload() {
-	    botaoGerarEtiquetasDownload = driver.findElement(By.xpath("//div[@id='pn_id_735_content' and @aria-hidden='false']//form/p-toolbar/div/div[2]/div/button"));
+	    botaoGerarEtiquetasDownload = driver.findElement(By.xpath("//div[@id='pn_id_778_content' and @aria-hidden='false']//form/p-toolbar/div/div[2]/div/button"));
 	}
 	
 	public void localizarBotaoMenuFinal() {

@@ -85,7 +85,7 @@ public class CamposTesteLivro {
 	}
 	
 	public void localizarBotaoExclusao() {
-		botaoExclusao = driver.findElement(By.xpath("//*[@id=\"pn_id_866-table\"]/tbody/tr/td[9]/div[2]"));
+		botaoExclusao = driver.findElement(By.xpath("//*[@id=\"pn_id_865-table\"]/tbody/tr/td[9]/div[2]"));
 	}
 	
 	public void localizarBotaoConfirmarExlusao() {
