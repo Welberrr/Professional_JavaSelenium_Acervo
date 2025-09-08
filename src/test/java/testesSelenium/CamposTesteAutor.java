@@ -1,6 +1,7 @@
 package testesSelenium;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,7 +17,8 @@ public class CamposTesteAutor {
 	private WebDriver driver;
 	private WebDriverWait wait;
 	
-	WebElement botaoMenu, botaoAutorMenu, botaoEditarAutor, botaoCheckEdit, botaoVoltarEdit, botaoVoltarCad, botaoCheckDel, botaoDeletar, botaoMenuFinal, botaoInicio, campoSenha, campoUsuario, campoNomeAutorCad, campoSiglaAutorCad, campoNomeAutorCons, campoSiglaAutorCons, campoNomeEdit, campoSiglaEdit;
+	WebElement botaoMenu, botaoAutorMenu, botaoVoltarEdit, botaoVoltarCad, botaoMenuFinal, botaoInicio, campoSenha, campoUsuario, campoNomeAutorCad, campoSiglaAutorCad, campoNomeAutorCons, campoSiglaAutorCons, campoNomeEdit, campoSiglaEdit;
+	public List<WebElement> botaoEditarAutor, botaoCheckEdit, botaoCheckDel, botaoDeletar;
 
 	public CamposTesteAutor(WebDriver driver) {
         this.driver = driver;
@@ -40,11 +42,11 @@ public class CamposTesteAutor {
 	}
 	
 	public void localizarBotaoEdicao(){
-		botaoEditarAutor = driver.findElement(By.xpath("//*[@data-testid='EditarAutor']"));
+		botaoEditarAutor = driver.findElements(By.xpath("//*[@data-testid='EditarAutor']"));
 	}
 	
 	public void localizarBotaoCheckEdit(){
-		botaoCheckEdit = driver.findElement(By.xpath("//*[@id=\"pn_id_66-table\"]/tbody/tr/td[1]/p-tablecheckbox/div/div[2]"));
+		botaoCheckEdit = driver.findElements(By.xpath("//*[@data-testid='CheckboxAutor']"));
 	}
 	
 	public void localizarBotaoAutor(){
@@ -60,8 +62,8 @@ public class CamposTesteAutor {
 	}
 	
 	public void localizarBotoesDel(){
-		botaoCheckDel = driver.findElement(By.xpath("//*[@data-testid='CheckboxAutor']"));
-		botaoDeletar =  driver.findElement(By.xpath("//*[@data-testid='ExcluirAutor']"));
+		botaoCheckDel = driver.findElements(By.xpath("//*[@data-testid='CheckboxAutor']"));
+		botaoDeletar =  driver.findElements(By.xpath("//*[@data-testid='ExcluirAutor']"));
 	}
 	
 	public void localizarBotaoMenuFinal() {
