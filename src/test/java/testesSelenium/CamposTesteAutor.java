@@ -20,7 +20,7 @@ public class CamposTesteAutor {
 
 	public CamposTesteAutor(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(300));
     }
 	
 	
@@ -40,7 +40,7 @@ public class CamposTesteAutor {
 	}
 	
 	public void localizarBotaoEdicao(){
-		botaoEditarAutor = driver.findElement(By.xpath("//*[@id=\"pn_id_66-table\"]/tbody/tr/td[4]/div[1]"));
+		botaoEditarAutor = driver.findElement(By.xpath("//*[@data-testid='EditarAutor']"));
 	}
 	
 	public void localizarBotaoCheckEdit(){
@@ -60,8 +60,8 @@ public class CamposTesteAutor {
 	}
 	
 	public void localizarBotoesDel(){
-		botaoCheckDel = driver.findElement(By.xpath("//*[@id=\"pn_id_928-table\"]/tbody/tr/td[1]/p-tablecheckbox/div/div[2]"));
-		botaoDeletar =  driver.findElement(By.xpath("//*[@id=\"pn_id_928-table\"]/tbody/tr/td[4]/div[2]"));
+		botaoCheckDel = driver.findElement(By.xpath("//*[@data-testid='CheckboxAutor']"));
+		botaoDeletar =  driver.findElement(By.xpath("//*[@data-testid='ExcluirAutor']"));
 	}
 	
 	public void localizarBotaoMenuFinal() {

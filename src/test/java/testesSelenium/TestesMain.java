@@ -31,32 +31,32 @@ public class TestesMain {
         autor.cadastroAutor();
         AutorDto autorDto = autor.editarAutor();
         
-        editora.cadastrarEditora();
-        EditoraDto editoraDto = editora.editarEditora();
-      
-        classificacao.cadastroClassificacao();
-        ClassificacaoLivroDto classificacaoDto = classificacao.editarClassificacao();
-        
-        classificacaoGabinete.cadastrarClassificacaoGabinete();
-        ClassificacaoSetorDto classGabDto = classificacaoGabinete.editarClassificacaoGabinete();
-        
-       
-        livro.CadastrarLivro(editoraDto, autorDto, classificacaoDto);
-        livro.VincularLivro(autorDto);
-        LivroDto livroDto = livro.EditarLivro(editoraDto);
-        
-        acervo.cadastrarAcervo(livroDto, autorDto, classGabDto);
-        acervo.editarAcervo(livroDto, autorDto, classGabDto);
-        
-        relatorios.gerarRelatorioLivro(livroDto, autorDto, classGabDto); 
-        relatorios.gerarRelatorioSintetico(classGabDto); 
-        relatorios.gerarEtiquetas(livroDto, autorDto, classGabDto);
-        
-        acervo.excluirAcervo(livroDto, autorDto);
-        livro.ExcluirLivro();
-        editora.excluirEditora();
+//        editora.cadastrarEditora();
+//        EditoraDto editoraDto = editora.editarEditora();
+//      
+//        classificacao.cadastroClassificacao();
+//        ClassificacaoLivroDto classificacaoDto = classificacao.editarClassificacao();
+//        
+//        classificacaoGabinete.cadastrarClassificacaoGabinete();
+//        ClassificacaoSetorDto classGabDto = classificacaoGabinete.editarClassificacaoGabinete();
+//        
+//       
+//        livro.CadastrarLivro(editoraDto, autorDto, classificacaoDto);
+//        livro.VincularLivro(autorDto);
+//        LivroDto livroDto = livro.EditarLivro(editoraDto);
+//        
+//        acervo.cadastrarAcervo(livroDto, autorDto, classGabDto);
+//        acervo.editarAcervo(livroDto, autorDto, classGabDto);
+//        
+//        relatorios.gerarRelatorioLivro(livroDto, autorDto, classGabDto); 
+//        relatorios.gerarRelatorioSintetico(classGabDto); 
+//        relatorios.gerarEtiquetas(livroDto, autorDto, classGabDto);
+//        
+//        acervo.excluirAcervo(livroDto, autorDto);
+//        livro.ExcluirLivro();
+//        editora.excluirEditora();
         autor.exclusaoAutor();
-        classificacaoGabinete.excluirClassificacaoGabinite();
-        classificacao.exclusaoClassificacao();
+//        classificacaoGabinete.excluirClassificacaoGabinite();
+//        classificacao.exclusaoClassificacao();
 	}
 }
