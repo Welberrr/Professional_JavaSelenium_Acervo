@@ -1,6 +1,7 @@
 package testesSelenium;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -16,11 +17,12 @@ public class CamposTesteEditora {
 	private WebDriver driver;
 	private WebDriverWait wait;
 	
-	WebElement botaoMenuEditora, botaoEditora, botaoNovaEditora, botaoVoltar, botaoInicio, botaoEdit, botaoDelete, campoNovaEditora, campoConsulta, campoEdit;
+	WebElement botaoMenuEditora, botaoEditora, botaoNovaEditora, botaoVoltar, botaoInicio, campoNovaEditora, campoConsulta, campoEdit;
+	public List<WebElement> botaoEdit, botaoDelete;
 	
 	public CamposTesteEditora(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(400));
     }
 	
 	public void localizarBotaoEditora() {
@@ -48,11 +50,11 @@ public class CamposTesteEditora {
 	}
 	
 	public void localizarBotaoEdit() {
-		botaoEdit = driver.findElement(By.xpath("//*[@id=\"pn_id_230-table\"]/tbody/tr/td[3]/div[1]"));
+		botaoEdit = driver.findElements(By.xpath("//*[@data-testid='EditarEditora']"));
 	}
 	
 	public void localizarBotaoExclusao() {
-		botaoDelete = driver.findElement(By.xpath("//*[@id=\"pn_id_894-table\"]/tbody/tr/td[3]/div[2]"));
+		botaoDelete = driver.findElements(By.xpath("//*[@data-testid='ExcluirEditora']"));
 	}
 	
 	public void localizarCampoConsulta() {

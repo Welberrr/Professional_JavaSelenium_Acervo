@@ -28,12 +28,12 @@ public class TestesMain {
         driver.get("http://localhost:4200/");
         
 
-        autor.cadastroAutor();
-        AutorDto autorDto = autor.editarAutor();
+//        autor.cadastroAutor();
+//        AutorDto autorDto = autor.editarAutor();
         
-//        editora.cadastrarEditora();
-//        EditoraDto editoraDto = editora.editarEditora();
-//      
+        editora.cadastrarEditora();
+        EditoraDto editoraDto = editora.editarEditora();
+      
 //        classificacao.cadastroClassificacao();
 //        ClassificacaoLivroDto classificacaoDto = classificacao.editarClassificacao();
 //        
@@ -54,8 +54,8 @@ public class TestesMain {
 //        
 //        acervo.excluirAcervo(livroDto, autorDto);
 //        livro.ExcluirLivro();
-//        editora.excluirEditora();
-        autor.exclusaoAutor();
+        editora.excluirEditora();
+//        autor.exclusaoAutor();
 //        classificacaoGabinete.excluirClassificacaoGabinite();
 //        classificacao.exclusaoClassificacao();
 	}

@@ -61,7 +61,7 @@ public class TesteEditora {
         
         Thread.sleep(1000);
         elemento.localizarBotaoEdit();
-        elemento.getBotaoEdit().click();
+        elemento.getBotaoEdit().get(0).click();
         
         editora.setNome("EDITORA EDITADA");
         
@@ -100,7 +100,7 @@ public class TesteEditora {
         
         Thread.sleep(1000);
         elemento.localizarBotaoExclusao();
-        elemento.getBotaoDelete().click();
+        elemento.getBotaoDelete().get(0).click();
         
         
         elemento.getBotaoMenuEditora().click();
