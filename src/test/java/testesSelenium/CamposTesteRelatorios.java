@@ -1,6 +1,7 @@
 package testesSelenium;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +19,7 @@ public class CamposTesteRelatorios {
 	private WebDriver driver;
 	private WebDriverWait wait;
 	
-	WebElement botaoMenuInicio, BotaoRelatorios, botaoEngGab, botaoGab, botaoAlterarGab, titulo, classificacao, autor, anoEdicao, volume, edicao, botaoPesquisar, botaoXLSX, botaoRelatorioSintetico, campoClassSintetico, botaoXLSXSintetico, botaoGerarEtiquetas, campoClassEtiqueta, campoAutorEtiqueta, botaoOrdenacaoEtiqueta, botaoAutorOrdenacao, campoVolumeEtiqueta, campoTituloEtiqueta, campoAssuntoEtiqueta, botaoPesquisarEtiquetas, botaoGerarEtiquetasDownload, botaoMenuFinal, botaoInicioFinal;
+	WebElement botaoMenuInicio, BotaoRelatorios, botaoEngGab, botaoGab, botaoAlterarGab, titulo, classificacao, autor, anoEdicao, volume, edicao, botaoXLSX, botaoRelatorioSintetico, campoClassSintetico, botaoXLSXSintetico, botaoGerarEtiquetas, campoClassEtiqueta, campoAutorEtiqueta, botaoOrdenacaoEtiqueta, botaoAutorOrdenacao, campoVolumeEtiqueta, campoTituloEtiqueta, campoAssuntoEtiqueta, botaoPesquisar,  botaoPesquisarEtiquetas, botaoGerarEtiquetasDownload, botaoMenuFinal, botaoInicioFinal;
 	
 	public CamposTesteRelatorios(WebDriver driver){
 		this.driver = driver;
@@ -77,36 +78,36 @@ public class CamposTesteRelatorios {
 	}
 	
 	public void localizarBotaoPesquisar() {
-		botaoPesquisar = driver.findElement(By.xpath("//*[@id=\"pn_id_731_content\"]/form/p-toolbar/div/div[2]/div/p-button[1]/button"));
+		botaoPesquisar = driver.findElement(By.xpath("//*[@data-testid='PesquisarRelatorios']"));
 	}
 	
 	public void localizarBotaoXLSX() {
-		botaoXLSX = driver.findElement(By.xpath("//*[@id=\"pn_id_731_content\"]/form/p-toolbar/div/div[2]/div/button"));
+		botaoXLSX = driver.findElement(By.xpath("//*[@data-testid='XLSRelatorios']"));
 	}
 	
 	
 	public void localizarBotaoRelatorioSintetico() {
-	    botaoRelatorioSintetico = driver.findElement(By.xpath("//*[@id=\"pn_id_756_header_action\"]"));
+	    botaoRelatorioSintetico = driver.findElement(By.xpath("//*[@data-testid='RelatorioSintetico']"));
 	}
 
 	public void localizarCampoClassSintetico() {
-	    campoClassSintetico = driver.findElement(By.xpath("//div[@id='pn_id_756_content' and @aria-hidden='false']//input[@id='classificacao']"));
+	    campoClassSintetico = driver.findElement(By.xpath("//div[@aria-hidden='false']//*[@data-testid='InputClassSintetico']"));
 	}
 
 	public void localizarBotaoXLSXSintetico() {
-	    botaoXLSXSintetico = driver.findElement(By.xpath("//div[@id='pn_id_756_content' and @aria-hidden='false']//form/p-toolbar/div/div[2]/button"));
+	    botaoXLSXSintetico = driver.findElement(By.xpath("//*[@data-testid='XLSSintetico']"));
 	}
 
 	public void localizarBotaoEtiquetas() {
-	    botaoGerarEtiquetas = driver.findElement(By.xpath("//*[@id=\"pn_id_778_header_action\"]"));
+	    botaoGerarEtiquetas = driver.findElement(By.xpath("//*[@data-testid='Etiquetas']"));
 	}
 
 	public void localizarCampoClassEtiquetas() {
-	    campoClassEtiqueta = driver.findElement(By.xpath("//div[@id='pn_id_778_content' and @aria-hidden='false']//input[@id='classificacao']"));
+	    campoClassEtiqueta = driver.findElement(By.xpath("//div[@aria-hidden='false']//*[@data-testid='InputClassEtiquetas']"));
 	}
 
 	public void localizarCampoAutorEtiquetas() {
-	    campoAutorEtiqueta = driver.findElement(By.xpath("//div[@id='pn_id_778_content' and @aria-hidden='false']//input[@id='autor']"));
+	    campoAutorEtiqueta = driver.findElement(By.xpath("//div[@aria-hidden='false']//*[@data-testid='InputAutorEtiquetas']"));
 	}
 
 	public void localizarOrdenacaoEtiqueta() {
@@ -115,23 +116,23 @@ public class CamposTesteRelatorios {
 	}
 
 	public void localizarCampoVolumeEtiqueta() {
-	    campoVolumeEtiqueta = driver.findElement(By.xpath("//div[@id='pn_id_778_content' and @aria-hidden='false']//input[@id='volume']"));
+	    campoVolumeEtiqueta = driver.findElement(By.xpath("//div[@aria-hidden='false']//*[@data-testid='InputVolumeEtiquetas']"));
 	}
 
 	public void localizarCampoTituloEtiqueta() {
-	    campoTituloEtiqueta = driver.findElement(By.xpath("//div[@id='pn_id_778_content' and @aria-hidden='false']//input[@id='titulo']"));
+	    campoTituloEtiqueta = driver.findElement(By.xpath("//div[@aria-hidden='false']//*[@data-testid='InputTituloEtiquetas']"));
 	}
 
 	public void localizarCampoAssuntoEtiqueta() {
-	    campoAssuntoEtiqueta = driver.findElement(By.xpath("//div[@id='pn_id_778_content' and @aria-hidden='false']//input[@id='assunto']"));
+	    campoAssuntoEtiqueta = driver.findElement(By.xpath("//div[@aria-hidden='false']//*[@data-testid='InputAssuntoEtiquetas']"));
 	}
 
 	public void localizarBotaoPesquisarEtiquetas() {
-	    botaoPesquisarEtiquetas = driver.findElement(By.xpath("//div[@id='pn_id_778_content' and @aria-hidden='false']//form/p-toolbar/div/div[2]/div/p-button[1]/button"));
+	    botaoPesquisarEtiquetas = driver.findElement(By.xpath("//*[@data-testid='PesquisarEtiquetas']"));
 	}
 
 	public void localizarBotaoGerarEtiquetasDownload() {
-	    botaoGerarEtiquetasDownload = driver.findElement(By.xpath("//div[@id='pn_id_778_content' and @aria-hidden='false']//form/p-toolbar/div/div[2]/div/button"));
+	    botaoGerarEtiquetasDownload = driver.findElement(By.xpath("//div[@aria-hidden='false']//*[@data-testid='BotaoDownloadEtiquetas']"));
 	}
 	
 	public void localizarBotaoMenuFinal() {

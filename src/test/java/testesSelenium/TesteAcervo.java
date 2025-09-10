@@ -1,26 +1,18 @@
 package testesSelenium;
 
-import java.time.Duration;
-
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import br.jus.stf.acervo.model.dto.AutorDto;
-import br.jus.stf.acervo.model.dto.ClassificacaoLivroDto;
 import br.jus.stf.acervo.model.dto.ClassificacaoSetorDto;
 import br.jus.stf.acervo.model.dto.LivroDto;
 
 public class TesteAcervo {
 	
 	private CamposTesteAcervo elemento;
-	private WebDriver driver;
 	
 	
 	public TesteAcervo(WebDriver driver) {
-		this.driver = driver;
 		this.elemento = new CamposTesteAcervo(driver);
     }
 	
@@ -146,7 +138,7 @@ public class TesteAcervo {
 		
 		
 		elemento.localizarBotaoEdicao();
-		elemento.getBotaoEdicao().click();
+		elemento.getBotaoEdicao().get(0).click();
 		Thread.sleep(1000);
 		
 		elemento.localizarCampoEmprestado();
@@ -220,7 +212,7 @@ public class TesteAcervo {
 		
 		
 		elemento.localizarBotaoExclusao();
-		elemento.getBotaoExclusao().click();
+		elemento.getBotaoExclusao().get(0).click();
 		Thread.sleep(2000);
 		
 		elemento.localizarConfirExclusao();

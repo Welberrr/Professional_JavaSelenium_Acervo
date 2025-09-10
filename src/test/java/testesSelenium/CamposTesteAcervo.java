@@ -1,6 +1,7 @@
 package testesSelenium;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,11 +20,12 @@ public class CamposTesteAcervo {
 	private WebDriver driver;
 	private WebDriverWait wait;
 	
-    WebElement botaoMenuInicio, botaoAcervo, botaoEngGabinete, botaoGabinete, botaoAlterar, botaoNovoAcervo, botaoSeleLivro, campoLivroTitulo, campoLivroAutor, campoLivroAno, botaoSelectLivro, botaoSelecionarLivro, campoEmprestado, campoNota, campoObservacao, campoClassGab, botaoGravar, botaoMenuFinal, botaoInicio, botaoPesquisar, botaoEdicao, botaoAlterarEdit, botaoExclusao, campoTituloCons, campoAutorCons, botaoPesquisarCons, botaoConfirExclusao;
-	
+    WebElement botaoMenuInicio, botaoAcervo, botaoEngGabinete, botaoGabinete, botaoAlterar, botaoNovoAcervo, botaoSeleLivro, campoLivroTitulo, campoLivroAutor, campoLivroAno, botaoSelectLivro, botaoSelecionarLivro, campoEmprestado, campoNota, campoObservacao, campoClassGab, botaoGravar, botaoMenuFinal, botaoInicio, botaoPesquisar, botaoAlterarEdit, campoTituloCons, campoAutorCons, botaoPesquisarCons, botaoConfirExclusao;
+	public List<WebElement> botaoEdicao,  botaoExclusao;
+    
 	public CamposTesteAcervo(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(400));
     }
 	
 	public WebElement botaoEspera(String xpath) {
@@ -71,7 +73,7 @@ public class CamposTesteAcervo {
 	}
 	
 	public void localizarBotaoSelectLivro() {
-		botaoSelectLivro = driver.findElement(By.xpath("//*[@id=\"pn_id_653-table\"]/tbody/tr/td[1]/p-tableradiobutton/div/div[2]"));
+		botaoSelectLivro = driver.findElement(By.xpath("/table[contains(@class, 'p-datatable-gridlines')]//tr[td[contains(text(), '\" + tituloLivro + \"')]]/td[1]//p-tableradiobutton//div/div[2]"));
 	}
 	
 	public void localizarBotaoSelecionarLivro() {
@@ -111,7 +113,7 @@ public class CamposTesteAcervo {
 	}
 	
 	public void localizarBotaoEdicao() {
-		botaoEdicao = driver.findElement(By.xpath("//*[@id=\"pn_id_666-table\"]/tbody/tr/td[6]/div[1]"));
+		botaoEdicao = driver.findElements(By.xpath("//*[@data-testid='EditarAcervo']"));
 	}
 	
 	public void localizarBotaoAlterarEdit() {
@@ -119,7 +121,7 @@ public class CamposTesteAcervo {
 	}
 	
 	public void localizarBotaoExclusao() {
-		botaoExclusao = driver.findElement(By.xpath("//*[@id=\"pn_id_803-table\"]/tbody/tr/td[6]/div[2]"));
+		botaoExclusao = driver.findElements(By.xpath("//*[@data-testid='ExcluirAcervo']"));
 	}
 	
 	public void localizarConfirExclusao() {
