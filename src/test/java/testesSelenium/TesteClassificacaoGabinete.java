@@ -82,7 +82,7 @@ public class TesteClassificacaoGabinete {
 		Thread.sleep(1000);
 		
 		elemento.localizarBotaoEdit();
-		elemento.getBotaoEdit().click();
+		elemento.getBotaoEdit().get(0).click();
 		Thread.sleep(1000);
 		
 		classificacaoGab.setDescricao("Classificacao Teste Edit");
@@ -125,7 +125,7 @@ public class TesteClassificacaoGabinete {
 		
 		
 		elemento.localizarBotaoExclusao();
-		elemento.getBotaoExclusao().click();
+		elemento.getBotaoExclusao().get(0).click();
 		Thread.sleep(1000);
 		
 		

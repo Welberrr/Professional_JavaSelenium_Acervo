@@ -1,5 +1,7 @@
 package testesSelenium;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
@@ -78,7 +80,7 @@ public class TesteClassificacaoGeral {
 		classificacao.setDescricao("Teste Selenium Edit");
 		
 		elemento.localizarBotaoEdit();
-		elemento.getBotaoEdit().click();
+		elemento.getBotaoEdit().get(0).click();
 
 		Thread.sleep(1000);
 		
@@ -131,7 +133,7 @@ public class TesteClassificacaoGeral {
 		
 		
 		elemento.localizarBotaoExclusao();
-		elemento.getBotaoExclusao().click();
+		elemento.getBotaoExclusao().get(0).click();
 		
 		Thread.sleep(1000);
 		

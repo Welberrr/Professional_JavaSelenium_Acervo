@@ -1,6 +1,7 @@
 package testesSelenium;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,7 +18,8 @@ public class CamposTesteLivro {
 	private WebDriver driver;
 	private WebDriverWait wait;
 	
-	WebElement botaoMenuLivro, botaoLivros, campoTitulo, campoIniciais, campoAssunto, campoISBN, campoAno, campoEdicao, campoVolume, campoCodigoColecao, campoEditora, campoClassificacaoGeral, botaoGravar, botaoMenuFinal, botaoInicioFinal, campoConsultaLivro, botaoEditLivro, botaoVincularAutor, campoAutorVinculo, botaoAutor, botaoGravarVinculo, botaoExclusao, botaoConfirmarExclusao, botaoAlterarEdit, botaoEdit2;
+	WebElement botaoMenuLivro, botaoLivros, campoTitulo, campoIniciais, campoAssunto, campoISBN, campoAno, campoEdicao, campoVolume, campoCodigoColecao, campoEditora, campoClassificacaoGeral, botaoGravar, botaoMenuFinal, botaoInicioFinal, campoConsultaLivro, botaoVincularAutor, campoAutorVinculo, botaoGravarVinculo, botaoConfirmarExclusao, botaoAlterarEdit, botaoEdit2;
+	public List<WebElement> botaoEditLivro, botaoExclusao, botaoAutor;
 	
 	public CamposTesteLivro(WebDriver driver) {
         this.driver = driver;
@@ -65,7 +67,7 @@ public class CamposTesteLivro {
 	}
 	
 	public void localizarBotaoEdit() {
-		botaoEditLivro = driver.findElement(By.xpath("//*[@id=\"pn_id_509-table\"]/tbody/tr/td[9]/div[1]"));
+		botaoEditLivro = driver.findElements(By.xpath("//*[@data-testid='EditarLivro']"));
 	}
 	
 	public void localizarBotaoVincularAutor() {
@@ -77,7 +79,7 @@ public class CamposTesteLivro {
 	}
 	
 	public void localizarBotaoAutor() {
-		botaoAutor = driver.findElement(By.xpath("//*[@id=\"pn_id_542_content\"]/div/div/div[1]/input"));
+		botaoAutor = driver.findElements(By.xpath("//*[@data-testid='radio-Autor']"));
 	}
 	
 	public void localizarBotaoGravarVinculo() {
@@ -85,7 +87,7 @@ public class CamposTesteLivro {
 	}
 	
 	public void localizarBotaoExclusao() {
-		botaoExclusao = driver.findElement(By.xpath("//*[@id=\"pn_id_865-table\"]/tbody/tr/td[9]/div[2]"));
+		botaoExclusao = driver.findElements(By.xpath("//*[@data-testid='ExcluirLivro']"));
 	}
 	
 	public void localizarBotaoConfirmarExlusao() {

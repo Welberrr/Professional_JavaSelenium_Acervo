@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,8 +19,8 @@ public class CamposTesteClassificacaoGabinete {
 	private WebDriver driver;
 	private WebDriverWait wait;
 	
-	WebElement botaoMenu, botaoClassGabinete, botaoEngren, botaoGabinete, botaoAlterarGab, botaoNovaClass, campoDescricao, botaoGravar, botaoMenuFinal, botaoInicio, campoConsulta, botaoEdit, campoEdicao, botaoAlterarEdit, botaoExclusao;
-	
+	WebElement botaoMenu, botaoClassGabinete, botaoEngren, botaoGabinete, botaoAlterarGab, botaoNovaClass, campoDescricao, botaoGravar, botaoMenuFinal, botaoInicio, campoConsulta, campoEdicao, botaoAlterarEdit;
+	public List<WebElement> botaoEdit, botaoExclusao;
 	
 	public CamposTesteClassificacaoGabinete(WebDriver driver) {
 		this.driver = driver;
@@ -75,7 +77,7 @@ public class CamposTesteClassificacaoGabinete {
 	}
 	
 	public void localizarBotaoEdit() {
-		botaoEdit = driver.findElement(By.xpath("//*[@id=\"pn_id_399-table\"]/tbody/tr/td[4]/div[1]"));
+		botaoEdit = driver.findElements(By.xpath("//*[@data-testid='EditarClassificacaoGab']"));
 	}
 	
 	public void localizarCampoEdicao() {
@@ -87,6 +89,6 @@ public class CamposTesteClassificacaoGabinete {
 	}
 	
 	public void localizarBotaoExclusao() {
-		botaoExclusao = driver.findElement(By.xpath("//*[@id=\"pn_id_980-table\"]/tbody/tr/td[4]/div[2]"));
+		botaoExclusao = driver.findElements(By.xpath("//*[@data-testid='ExcluirClassificacaoGab']"));
 	}
 }

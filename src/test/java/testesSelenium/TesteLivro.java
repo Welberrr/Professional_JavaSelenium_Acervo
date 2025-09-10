@@ -102,7 +102,7 @@ public class TesteLivro {
 		Thread.sleep(5000);
 		
 		elemento.localizarBotaoEdit();
-		elemento.getBotaoEditLivro().click();
+		elemento.getBotaoEditLivro().get(0).click();
 		
 		
 		elemento.localizarBotaoVincularAutor();
@@ -116,7 +116,7 @@ public class TesteLivro {
 		elemento.getCampoAutorVinculo().sendKeys(Keys.ENTER);
 		
 		elemento.localizarBotaoAutor();
-		elemento.getBotaoAutor().click();
+		elemento.getBotaoAutor().get(0).click();
 		Thread.sleep(1000);
 
 		elemento.localizarBotaoGravarVinculo();
@@ -133,7 +133,7 @@ public class TesteLivro {
 	    elemento.getBotaoInicioFinal().click();
 	}
 	
-	public void EditarLivro(EditoraDto editoraDto)throws InterruptedException {
+	public LivroDto EditarLivro(EditoraDto editoraDto)throws InterruptedException {
 		elemento.botaoMenuLivro = elemento.botaoEspera("/html/body/app-root/app-layout/div/app-topbar/div[1]/button[1]");
 		elemento.getBotaoMenuLivro().click();
 		
@@ -201,6 +201,7 @@ public class TesteLivro {
 	    
 	    elemento.localizarBotaoInicioFinal();
 	    elemento.getBotaoInicioFinal().click();
+		return livro;
 	}
 	
 	public void ExcluirLivro()throws InterruptedException {
@@ -223,7 +224,7 @@ public class TesteLivro {
 		
 		
 		elemento.localizarBotaoExclusao();
-		elemento.botaoExclusao.click();
+		elemento.botaoExclusao.get(0).click();
 		
 		Thread.sleep(4000);
 		
