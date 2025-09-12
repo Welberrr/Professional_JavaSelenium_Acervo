@@ -87,7 +87,7 @@ public class CamposTesteRelatorios {
 	
 	
 	public void localizarBotaoRelatorioSintetico() {
-	    botaoRelatorioSintetico = driver.findElement(By.xpath("//div[@role='tab' and normalize-space()='Relatório Sintético']"));
+	    botaoRelatorioSintetico = driver.findElement(By.xpath("//a[@role='tab' and .//span[normalize-space()='Relatório Sintético']]"));
 	}
 
 	public void localizarCampoClassSintetico() {
@@ -99,7 +99,7 @@ public class CamposTesteRelatorios {
 	}
 
 	public void localizarBotaoEtiquetas() {
-	    botaoGerarEtiquetas = driver.findElement(By.xpath("//*[@data-testid='Etiquetas']"));
+	    botaoGerarEtiquetas = driver.findElement(By.xpath("//a[@role='tab' and .//span[normalize-space()='Gerar Etiquetas']]"));
 	}
 
 	public void localizarCampoClassEtiquetas() {

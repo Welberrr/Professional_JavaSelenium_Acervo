@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import br.jus.stf.acervo.model.dto.LivroDto;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,6 +20,7 @@ public class CamposTesteAcervo {
 
 	private WebDriver driver;
 	private WebDriverWait wait;
+	
 	
     WebElement botaoMenuInicio, botaoAcervo, botaoEngGabinete, botaoGabinete, botaoAlterar, botaoNovoAcervo, botaoSeleLivro, campoLivroTitulo, campoLivroAutor, campoLivroAno, botaoSelectLivro, botaoSelecionarLivro, campoEmprestado, campoNota, campoObservacao, campoClassGab, botaoGravar, botaoMenuFinal, botaoInicio, botaoPesquisar, botaoAlterarEdit, campoTituloCons, campoAutorCons, botaoPesquisarCons, botaoConfirExclusao;
 	public List<WebElement> botaoEdicao,  botaoExclusao;
@@ -73,7 +75,7 @@ public class CamposTesteAcervo {
 	}
 	
 	public void localizarBotaoSelectLivro() {
-		botaoSelectLivro = driver.findElement(By.xpath("/table[contains(@class, 'p-datatable-gridlines')]//tr[td[contains(text(), '\" + tituloLivro + \"')]]/td[1]//p-tableradiobutton//div/div[2]"));
+		botaoSelectLivro = driver.findElement(By.xpath("(//p-tableradiobutton//div[contains(@class,'p-radiobutton-box')])[1]"));
 	}
 	
 	public void localizarBotaoSelecionarLivro() {
