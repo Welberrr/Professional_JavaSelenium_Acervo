@@ -4,4 +4,6 @@
 
 * O selenium ultiiza de Xpaths para a identificação de elementos no DOM e interage de acordo com o que foi programado.
 
+  ***
+
 * *Backup de código que depende de outras aplicações, não funcional de forma idependente*
